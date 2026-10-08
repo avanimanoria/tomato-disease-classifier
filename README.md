@@ -139,6 +139,24 @@ Fill `[grouping method]` truthfully, e.g. "verified plant-ID groups" or "duplica
 | Training refused: test-lock failed | Read `reports/test_lock_verification.md`; never edit files under `data/processed/` by hand - rebuild the split |
 | WebP images not used by TF | They are auto-converted to PNG during the split |
 
-## 20. Git ignore policy
-Ignored: virtual env, caches, `data/raw/`, `data/processed/`, the test-lock manifest, trained models (`*.keras *.h5 *.tflite`), `logs/`, and generated `reports/*.{png,csv,json}`.
+## 20. Mission Control & Classification Dashboard
+The project includes an integrated interactive dashboard located in `frontend/`:
+```bash
+python frontend/app.py
+```
+Open `http://localhost:5000` in any browser.
+
+### Features
+- **Simulated UAV Survey Mission**: Visualises top-down field survey telemetry, path traversal, simulated disease detection grid, and variable-rate spray treatments.
+- **Tomato Leaf Image Classification Panel**:
+  - Direct leaf photo upload (`.jpg`, `.jpeg`, `.png`, `.webp`).
+  - Real-time client-side image preview.
+  - Interactive "Classify leaf image" action calling `POST /api/predict`.
+  - Visual breakdown of model output: predicted class, overall confidence %, latency (ms), and per-class probability bars for **Healthy**, **Early Blight**, and **Late Blight**.
+  - Uses the trained `models/best_model.keras` model artifact in real time.
+  - Clear distinction between simulated field survey telemetry and authentic machine learning model predictions.
+
+## 21. Git ignore policy
+Ignored: virtual env, caches, `data/raw/`, `data/processed/`, `data/dataset_archieved/`, the test-lock manifest, trained models (`*.keras *.h5 *.tflite`), `logs/`, and generated `reports/*.{png,csv,json}`.
 `.gitkeep` files keep empty folders. Do not commit datasets or the test-lock manifest; back them up separately.
+

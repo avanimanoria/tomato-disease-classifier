@@ -23,7 +23,87 @@
       <aside class="side-column">
         <section class="panel control-panel"><div class="panel-head"><div><p class="eyebrow">MISSION SETUP</p><h2>Survey parameters</h2></div><span class="live-chip">SIMULATION</span></div><form id="mission-form"><div class="field-row"><label>FIELD LENGTH <span>metres</span><input id="field-length" type="number" min="1" max="10000" step="1" value="50" required></label><label>FIELD WIDTH <span>metres</span><input id="field-width" type="number" min="1" max="10000" step="1" value="30" required></label></div><label>DRONE SPEED <span>metres / second</span><input id="drone-speed" type="number" min="0.1" max="20" step="0.1" value="1.0" required></label><div class="button-row"><button id="start-button" class="primary" type="submit"><span>▶</span> Start mission</button><button id="stop-button" class="secondary" type="button">Stop</button></div></form></section>
         <section class="panel stats-panel"><div class="panel-head"><div><p class="eyebrow">MISSION READOUT</p><h2>Coverage & treatment</h2></div></div><div class="progress-block"><div class="stat-line"><span>Mission progress</span><strong id="progress-label">0%</strong></div><div class="progress"><i id="progress-bar"></i></div></div><div class="metric-grid"><div><span>AREA COVERED</span><strong id="covered-area">0.0 <small>m²</small></strong></div><div><span>DISEASE DETECTED</span><strong id="disease-percent">0.0 <small>%</small></strong></div><div><span>SPRAY USED</span><strong id="spray-used">0.0 <small>ml</small></strong></div><div><span>PLANTS TREATED</span><strong id="plants-treated">0</strong></div></div></section>
-        <section class="panel classifier-panel"><div class="panel-head"><div><p class="eyebrow">IMAGE CLASSIFIER</p><h2>Real leaf diagnosis</h2></div><span class="live-chip" style="background:#204034;color:#6ee7b7">REAL MODEL</span></div><div style="margin-top:10px;"><input type="file" id="leaf-image-input" accept="image/*" style="font-size:12px;margin-bottom:8px;color:#c0d0c8;width:100%;"><button id="diagnose-button" class="primary" type="button" style="width:100%;"><span>🔍</span> Diagnose leaf photo</button></div><div id="diagnosis-result" style="margin-top:10px;font-size:12px;color:#94a3b8;">Upload a tomato leaf photo (.jpg/.png) to run real inference with the trained MobileNetV3 model.</div></section>
+        <section class="panel classifier-panel" id="leaf-classification-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">IMAGE CLASSIFIER</p>
+              <h2>Tomato Leaf Image Classification</h2>
+            </div>
+            <span class="live-chip" style="background:#204034;color:#6ee7b7">REAL MODEL</span>
+          </div>
+
+          <div class="classifier-body" style="margin-top:14px;display:flex;flex-direction:column;gap:12px;">
+            <div class="classifier-input-group">
+              <label for="leaf-image-input" style="font-size:11px;color:#8fa89b;margin-bottom:6px;display:block;">
+                SELECT LEAF IMAGE <span>(.jpg, .jpeg, .png, .webp)</span>
+              </label>
+              <input type="file" id="leaf-image-input" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" style="font-size:12px;color:#c0d0c8;width:100%;padding:8px;background:#192e25;border:1px solid rgba(201,231,208,0.13);border-radius:4px;">
+            </div>
+
+            <div id="image-preview-container" style="display:none;align-items:center;justify-content:center;background:#10221d;border:1px dashed #204034;border-radius:6px;padding:8px;max-height:180px;overflow:hidden;">
+              <img id="leaf-image-preview" src="" alt="Selected leaf preview" style="max-height:160px;max-width:100%;object-fit:contain;border-radius:4px;">
+            </div>
+
+            <button id="classify-leaf-button" class="primary" type="button" style="width:100%;">
+              <span id="classify-button-icon">🔍</span> <span id="classify-button-text">Classify leaf image</span>
+            </button>
+
+            <div id="classification-loading" style="display:none;text-align:center;padding:8px;font-size:12px;color:#6ee7b7;font-family:'DM Mono',monospace;">
+              <span>⏳ Running real model inference...</span>
+            </div>
+
+            <div id="classification-error" style="display:none;padding:10px;background:rgba(219,118,101,0.1);border:1px solid #db7665;border-radius:6px;font-size:12px;color:#fca5a5;"></div>
+
+            <div id="classification-results" style="display:none;background:#10221d;border:1px solid #204034;border-radius:6px;padding:14px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;">
+                <span style="font-size:11px;color:#8fa89b;font-family:'DM Mono',monospace;">PREDICTED CLASS</span>
+                <span id="res-latency" style="font-size:11px;color:#8fa89b;font-family:'DM Mono',monospace;">-- ms</span>
+              </div>
+              <div id="res-predicted-class" style="font-size:17px;font-weight:700;color:#6ee7b7;text-transform:uppercase;letter-spacing:0.5px;">--</div>
+              <div style="font-size:12px;color:#edf3e9;margin-top:4px;margin-bottom:12px;">
+                Overall Confidence: <b id="res-confidence" style="color:#b8e3a7;">--%</b>
+              </div>
+
+              <div style="border-top:1px dashed #204034;padding-top:10px;margin-top:8px;">
+                <span style="font-size:10px;color:#8fa89b;font-family:'DM Mono',monospace;display:block;margin-bottom:8px;letter-spacing:0.8px;">CLASS PROBABILITIES</span>
+                
+                <div style="margin-bottom:6px;">
+                  <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;">
+                    <span style="color:#c4d4c8;">Healthy</span>
+                    <strong id="prob-val-healthy" style="color:#edf3e9;font-family:'DM Mono',monospace;">0.0%</strong>
+                  </div>
+                  <div style="height:4px;background:#263c32;border-radius:2px;overflow:hidden;">
+                    <div id="prob-bar-healthy" style="height:100%;width:0%;background:#3f765d;transition:width 0.4s ease;"></div>
+                  </div>
+                </div>
+
+                <div style="margin-bottom:6px;">
+                  <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;">
+                    <span style="color:#c4d4c8;">Early Blight</span>
+                    <strong id="prob-val-early-blight" style="color:#edf3e9;font-family:'DM Mono',monospace;">0.0%</strong>
+                  </div>
+                  <div style="height:4px;background:#263c32;border-radius:2px;overflow:hidden;">
+                    <div id="prob-bar-early-blight" style="height:100%;width:0%;background:#d5b646;transition:width 0.4s ease;"></div>
+                  </div>
+                </div>
+
+                <div style="margin-bottom:6px;">
+                  <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;">
+                    <span style="color:#c4d4c8;">Late Blight</span>
+                    <strong id="prob-val-late-blight" style="color:#edf3e9;font-family:'DM Mono',monospace;">0.0%</strong>
+                  </div>
+                  <div style="height:4px;background:#263c32;border-radius:2px;overflow:hidden;">
+                    <div id="prob-bar-late-blight" style="height:100%;width:0%;background:#c8584c;transition:width 0.4s ease;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="classifier-disclaimer" style="font-size:10px;line-height:1.4;color:#6b7280;margin-top:2px;">
+              <i>Classifier confidence is not disease severity. Field mission data is simulated.</i>
+            </div>
+          </div>
+        </section>
       </aside>
     </section>
 
@@ -60,27 +140,107 @@
     function renderLog(log) { $('event-count').textContent = log.length + (log.length === 1 ? ' event' : ' events'); $('event-log').innerHTML = log.length ? log.slice(0, 8).map(event => `<div class="event"><span class="event-dot ${event.severity_level.toLowerCase()}"></span><div><b>${event.severity_level} treatment</b><small>${event.position.x}m / ${event.position.y}m · ${new Date(event.timestamp).toLocaleTimeString()}</small></div><strong>${event.spray_amount_ml.toFixed(1)} ml</strong></div>`).join('') : '<div class="empty-log">No treatment events yet.</div>'; }
     $('mission-form').addEventListener('submit', async (event) => { event.preventDefault(); const payload = { field_length: Number($('field-length').value), field_width: Number($('field-width').value), drone_speed: Number($('drone-speed').value) }; const response = await fetch('/api/mission/start', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload) }); if (!response.ok) { const data = await response.json(); alert(data.error); return; } $('map-empty').style.display = 'none'; await poll(); });
     $('stop-button').addEventListener('click', async () => { await fetch('/api/mission/stop', { method: 'POST' }); await poll(); });
-    $('diagnose-button').addEventListener('click', async () => {
-      const file = $('leaf-image-input').files[0];
-      if (!file) { $('diagnosis-result').innerHTML = '<span style="color:#f87171;">Please select a leaf image file first.</span>'; return; }
-      const fd = new FormData();
-      fd.append('image', file);
-      $('diagnosis-result').innerHTML = '<span style="color:#6ee7b7;">Running real model inference...</span>';
+
+    // --- Image Upload & Classification Panel Handler ---
+    const imageInput = $('leaf-image-input');
+    const imagePreviewContainer = $('image-preview-container');
+    const imagePreview = $('leaf-image-preview');
+    const classifyBtn = $('classify-leaf-button');
+    const btnIcon = $('classify-button-icon');
+    const btnText = $('classify-button-text');
+    const loadingElem = $('classification-loading');
+    const errorElem = $('classification-error');
+    const resultsElem = $('classification-results');
+
+    imageInput.addEventListener('change', () => {
+      errorElem.style.display = 'none';
+      errorElem.textContent = '';
+      const file = imageInput.files && imageInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          imagePreview.src = e.target.result;
+          imagePreviewContainer.style.display = 'flex';
+        };
+        reader.readAsDataURL(file);
+      } else {
+        imagePreview.src = '';
+        imagePreviewContainer.style.display = 'none';
+      }
+    });
+
+    classifyBtn.addEventListener('click', async () => {
+      errorElem.style.display = 'none';
+      errorElem.textContent = '';
+      const file = imageInput.files && imageInput.files[0];
+      if (!file) {
+        errorElem.textContent = 'Please choose a leaf image file (.jpg, .jpeg, .png, or .webp) first.';
+        errorElem.style.display = 'block';
+        return;
+      }
+
+      const validTypes = ['image/jpeg', 'image/png', 'image/webp'];
+      const ext = file.name.split('.').pop().toLowerCase();
+      const validExts = ['jpg', 'jpeg', 'png', 'webp'];
+      if (!validExts.includes(ext) && !validTypes.includes(file.type)) {
+        errorElem.textContent = 'Selected file format is not supported. Please select a JPG, JPEG, PNG, or WebP image.';
+        errorElem.style.display = 'block';
+        return;
+      }
+
+      classifyBtn.disabled = true;
+      btnIcon.textContent = '⏳';
+      btnText.textContent = 'Inference in progress...';
+      loadingElem.style.display = 'block';
+
       try {
-        const res = await fetch('/api/predict', { method: 'POST', body: fd });
-        const data = await res.json();
-        if (data.error) { $('diagnosis-result').innerHTML = '<span style="color:#f87171;">Error: ' + data.error + '</span>'; return; }
+        const formData = new FormData();
+        formData.append('image', file);
+
+        const response = await fetch('/api/predict', {
+          method: 'POST',
+          body: formData
+        });
+
+        let data;
+        try {
+          data = await response.json();
+        } catch (jsonErr) {
+          throw new Error('Server returned an invalid non-JSON response (HTTP ' + response.status + ').');
+        }
+
+        if (!response.ok || data.error) {
+          throw new Error(data.error || 'Prediction failed with status ' + response.status);
+        }
+
+        // Render actual model prediction
+        $('res-predicted-class').textContent = data.predicted_class.replace('_', ' ');
+        $('res-confidence').textContent = (data.confidence * 100).toFixed(1) + '%';
+        $('res-latency').textContent = Math.round(data.inference_time_ms) + ' ms';
+
         const probs = data.class_probabilities || {};
-        const probStr = Object.entries(probs).map(([k, v]) => `<div><small>${k}: ${(v*100).toFixed(1)}%</small></div>`).join('');
-        $('diagnosis-result').innerHTML = `
-          <div style="padding:10px;background:#10221d;border:1px solid #204034;border-radius:6px;margin-top:6px;">
-            <div style="color:#6ee7b7;font-weight:bold;font-size:14px;text-transform:uppercase;">${data.predicted_class}</div>
-            <div style="font-size:12px;margin:4px 0;">Confidence: <b>${(data.confidence * 100).toFixed(1)}%</b> · Latency: <b>${Math.round(data.inference_time_ms)} ms</b></div>
-            <div style="margin:6px 0;padding-top:6px;border-top:1px dashed #204034;">${probStr}</div>
-            <small style="color:#6b7280;display:block;font-size:10px;line-height:1.2;margin-top:4px;"><i>Note: Confidence indicates classifier certainty for this image; it does not measure infected leaf area or disease severity.</i></small>
-          </div>`;
+        const hProb = (probs.healthy || 0) * 100;
+        const ebProb = (probs.early_blight || 0) * 100;
+        const lbProb = (probs.late_blight || 0) * 100;
+
+        $('prob-val-healthy').textContent = hProb.toFixed(1) + '%';
+        $('prob-bar-healthy').style.width = Math.min(100, Math.max(0, hProb)) + '%';
+
+        $('prob-val-early-blight').textContent = ebProb.toFixed(1) + '%';
+        $('prob-bar-early-blight').style.width = Math.min(100, Math.max(0, ebProb)) + '%';
+
+        $('prob-val-late-blight').textContent = lbProb.toFixed(1) + '%';
+        $('prob-bar-late-blight').style.width = Math.min(100, Math.max(0, lbProb)) + '%';
+
+        resultsElem.style.display = 'block';
       } catch (err) {
-        $('diagnosis-result').innerHTML = '<span style="color:#f87171;">Request failed: ' + err.message + '</span>';
+        errorElem.textContent = err.message || 'An unexpected error occurred during classification.';
+        errorElem.style.display = 'block';
+      } finally {
+        classifyBtn.disabled = false;
+        btnIcon.textContent = '🔍';
+        btnText.textContent = 'Classify leaf image';
+        loadingElem.style.display = 'none';
       }
     });
     window.addEventListener('resize', drawMap); poll(); setInterval(poll, 1000);
