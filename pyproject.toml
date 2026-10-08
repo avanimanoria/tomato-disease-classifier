@@ -1,0 +1,11 @@
+[project]
+name = "tomato-disease-classifier"
+version = "0.1.0"
+description = "Scientifically honest tomato leaf disease classifier (MobileNetV3Small, TFLite-ready)"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning", "ignore::FutureWarning"]

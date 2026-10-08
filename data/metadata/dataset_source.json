@@ -1,0 +1,21 @@
+{
+  "repository_url": "https://github.com/spMohanty/PlantVillage-Dataset",
+  "git_revision": "7f7ecc7e1eaca78107e3affe7cb5abd9427e139a",
+  "verified_commit": "7f7ecc7e1eaca78107e3affe7cb5abd9427e139a",
+  "import_timestamp": "2026-10-08T19:06:14+00:00",
+  "colour_folders_imported": {
+    "Tomato___Early_blight": "data/raw/early_blight",
+    "Tomato___healthy": "data/raw/healthy",
+    "Tomato___Late_blight": "data/raw/late_blight"
+  },
+  "image_counts": {
+    "early_blight": 1000,
+    "healthy": 1591,
+    "late_blight": 1909
+  },
+  "leaf_map_present": true,
+  "other_datasets_preserved": [
+    "Tomato Disease Dataset",
+    "TomatoDB_CV"
+  ]
+}

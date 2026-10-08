@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fieldline | UAV Spray Mission</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">+</span><div><p class="eyebrow">AUTONOMOUS FIELD OPS</p><h1>Fieldline <span>/ Mission Control</span></h1></div></div>
+      <div class="mission-state"><span id="status-dot" class="status-dot"></span><span id="mission-status">READY</span><span class="divider"></span><span id="mission-timer">00:00</span></div>
+    </header>
+
+    <section class="workspace">
+      <div class="map-panel panel">
+        <div class="panel-head"><div><p class="eyebrow">LIVE SURVEY</p><h2>Field telemetry</h2></div><div class="signal"><span></span> MOCK LINK <b id="battery">100%</b></div></div>
+        <div class="map-wrap"><canvas id="field-map" aria-label="Top-down field map"></canvas><div class="map-legend"><span><i class="swatch healthy"></i> Healthy</span><span><i class="swatch low"></i> Low</span><span><i class="swatch medium"></i> Medium</span><span><i class="swatch high"></i> High</span><span><i class="swatch sprayed"></i> Sprayed</span></div><div class="map-empty" id="map-empty">Configure a field to begin survey</div></div>
+        <div class="telemetry"><div><span>POSITION</span><strong id="position">0.0m / 0.0m</strong></div><div><span>HEADING</span><strong id="heading">090°</strong></div><div><span>ALTITUDE</span><strong id="altitude">0.0m</strong></div><div><span>SPEED</span><strong id="speed">0.0 m/s</strong></div></div>
+      </div>
+
+      <aside class="side-column">
+        <section class="panel control-panel"><div class="panel-head"><div><p class="eyebrow">MISSION SETUP</p><h2>Survey parameters</h2></div><span class="live-chip">SIMULATION</span></div><form id="mission-form"><div class="field-row"><label>FIELD LENGTH <span>metres</span><input id="field-length" type="number" min="1" max="10000" step="1" value="50" required></label><label>FIELD WIDTH <span>metres</span><input id="field-width" type="number" min="1" max="10000" step="1" value="30" required></label></div><label>DRONE SPEED <span>metres / second</span><input id="drone-speed" type="number" min="0.1" max="20" step="0.1" value="1.0" required></label><div class="button-row"><button id="start-button" class="primary" type="submit"><span>▶</span> Start mission</button><button id="stop-button" class="secondary" type="button">Stop</button></div></form></section>
+        <section class="panel stats-panel"><div class="panel-head"><div><p class="eyebrow">MISSION READOUT</p><h2>Coverage & treatment</h2></div></div><div class="progress-block"><div class="stat-line"><span>Mission progress</span><strong id="progress-label">0%</strong></div><div class="progress"><i id="progress-bar"></i></div></div><div class="metric-grid"><div><span>AREA COVERED</span><strong id="covered-area">0.0 <small>m²</small></strong></div><div><span>DISEASE DETECTED</span><strong id="disease-percent">0.0 <small>%</small></strong></div><div><span>SPRAY USED</span><strong id="spray-used">0.0 <small>ml</small></strong></div><div><span>PLANTS TREATED</span><strong id="plants-treated">0</strong></div></div></section>
+        <section class="panel classifier-panel"><div class="panel-head"><div><p class="eyebrow">IMAGE CLASSIFIER</p><h2>Real leaf diagnosis</h2></div><span class="live-chip" style="background:#204034;color:#6ee7b7">REAL MODEL</span></div><div style="margin-top:10px;"><input type="file" id="leaf-image-input" accept="image/*" style="font-size:12px;margin-bottom:8px;color:#c0d0c8;width:100%;"><button id="diagnose-button" class="primary" type="button" style="width:100%;"><span>🔍</span> Diagnose leaf photo</button></div><div id="diagnosis-result" style="margin-top:10px;font-size:12px;color:#94a3b8;">Upload a tomato leaf photo (.jpg/.png) to run real inference with the trained MobileNetV3 model.</div></section>
+      </aside>
+    </section>
+
+    <section class="lower-grid"><section class="panel log-panel"><div class="panel-head"><div><p class="eyebrow">EVENT STREAM</p><h2>Spray activity</h2></div><span id="event-count" class="count">0 events</span></div><div id="event-log" class="event-log"><div class="empty-log">No treatment events yet.</div></div></section><section class="panel notes-panel"><p class="eyebrow">MISSION PROFILE</p><h2>Variable-rate protocol</h2><p>Severity is sampled across a 10 × 10 field grid. Treatment activates above 5% disease coverage and scales from 2 to 6 ml/sec.</p><div class="protocol"><span>LOW <b>2 ml/s · 2s</b></span><span>MEDIUM <b>4 ml/s · 4s</b></span><span>HIGH <b>6 ml/s · 6s</b></span></div></section></section>
+  </main>
+  <script>
+    const state = { map: null, telemetry: null, status: null };
+    const $ = (id) => document.getElementById(id);
+    const canvas = $('field-map');
+    const ctx = canvas.getContext('2d');
+    const colors = { healthy: '#3f765d', low: '#d5b646', medium: '#d37e3f', high: '#c8584c' };
+
+    function severityColor(value) {
+      if (value <= 5) return colors.healthy;
+      if (value <= 15) return colors.low;
+      if (value <= 30) return colors.medium;
+      return colors.high;
+    }
+    function drawMap() {
+      if (!state.map || !state.map.cells.length) return;
+      const rect = canvas.getBoundingClientRect(); const ratio = window.devicePixelRatio || 1;
+      canvas.width = rect.width * ratio; canvas.height = rect.height * ratio; ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+      const pad = 24, width = rect.width - pad * 2, height = rect.height - pad * 2, rows = state.map.grid_size.rows, cols = state.map.grid_size.cols;
+      ctx.fillStyle = '#10221d'; ctx.fillRect(0, 0, rect.width, rect.height);
+      const cellW = width / cols, cellH = height / rows;
+      state.map.cells.forEach(cell => { const x = pad + cell.col * cellW, y = pad + (rows - 1 - cell.row) * cellH; ctx.fillStyle = severityColor(cell.severity); ctx.globalAlpha = cell.scanned ? 0.92 : 0.2; ctx.fillRect(x + 2, y + 2, cellW - 4, cellH - 4); if (cell.sprayed) { ctx.globalAlpha = 1; ctx.strokeStyle = '#b8e3a7'; ctx.lineWidth = 2; ctx.strokeRect(x + 5, y + 5, cellW - 10, cellH - 10); ctx.fillStyle = '#d5f4c8'; ctx.font = 'bold 14px sans-serif'; ctx.fillText('✓', x + cellW - 20, y + 20); } });
+      ctx.globalAlpha = 1; if (state.telemetry) { const px = pad + state.telemetry.position.x / state.map.field_dimensions.length * width; const py = pad + (1 - state.telemetry.position.y / state.map.field_dimensions.width) * height; ctx.save(); ctx.translate(px, py); ctx.rotate((state.telemetry.heading - 90) * Math.PI / 180); ctx.fillStyle = '#f1f5e9'; ctx.shadowColor = '#b8e3a7'; ctx.shadowBlur = 14; ctx.beginPath(); ctx.moveTo(12, 0); ctx.lineTo(-9, -7); ctx.lineTo(-5, 0); ctx.lineTo(-9, 7); ctx.closePath(); ctx.fill(); ctx.restore(); }
+    }
+    function updateDom() {
+      if (state.status) { $('mission-status').textContent = state.status.status.toUpperCase(); $('status-dot').className = 'status-dot ' + state.status.status.toLowerCase(); $('progress-label').textContent = state.status.mission_progress + '%'; $('progress-bar').style.width = state.status.mission_progress + '%'; $('covered-area').innerHTML = state.status.covered_area_m2.toFixed(1) + ' <small>m²</small>'; $('disease-percent').innerHTML = state.status.disease_detected_percent.toFixed(1) + ' <small>%</small>'; $('spray-used').innerHTML = state.status.spray_used_ml.toFixed(1) + ' <small>ml</small>'; $('plants-treated').textContent = state.status.plants_treated; $('mission-timer').textContent = new Date(state.status.elapsed_seconds * 1000).toISOString().substring(14, 19); }
+      if (state.telemetry) { const p = state.telemetry.position; $('position').textContent = p.x.toFixed(1) + 'm / ' + p.y.toFixed(1) + 'm'; $('heading').textContent = String(Math.round(state.telemetry.heading)).padStart(3, '0') + '°'; $('altitude').textContent = state.telemetry.altitude.toFixed(1) + 'm'; $('speed').textContent = state.telemetry.speed.toFixed(1) + ' m/s'; $('battery').textContent = state.telemetry.battery + '%'; }
+    }
+    async function poll() { try { const responses = await Promise.all(['/api/mission/status', '/api/drone/telemetry', '/api/field/disease_map', '/api/spray/log'].map(url => fetch(url))); state.status = await responses[0].json(); state.telemetry = await responses[1].json(); state.map = await responses[2].json(); const log = await responses[3].json(); renderLog(log); updateDom(); drawMap(); $('map-empty').style.display = state.map.cells.length ? 'none' : 'grid'; } catch (error) { console.error(error); } }
+    function renderLog(log) { $('event-count').textContent = log.length + (log.length === 1 ? ' event' : ' events'); $('event-log').innerHTML = log.length ? log.slice(0, 8).map(event => `<div class="event"><span class="event-dot ${event.severity_level.toLowerCase()}"></span><div><b>${event.severity_level} treatment</b><small>${event.position.x}m / ${event.position.y}m · ${new Date(event.timestamp).toLocaleTimeString()}</small></div><strong>${event.spray_amount_ml.toFixed(1)} ml</strong></div>`).join('') : '<div class="empty-log">No treatment events yet.</div>'; }
+    $('mission-form').addEventListener('submit', async (event) => { event.preventDefault(); const payload = { field_length: Number($('field-length').value), field_width: Number($('field-width').value), drone_speed: Number($('drone-speed').value) }; const response = await fetch('/api/mission/start', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload) }); if (!response.ok) { const data = await response.json(); alert(data.error); return; } $('map-empty').style.display = 'none'; await poll(); });
+    $('stop-button').addEventListener('click', async () => { await fetch('/api/mission/stop', { method: 'POST' }); await poll(); });
+    $('diagnose-button').addEventListener('click', async () => {
+      const file = $('leaf-image-input').files[0];
+      if (!file) { $('diagnosis-result').innerHTML = '<span style="color:#f87171;">Please select a leaf image file first.</span>'; return; }
+      const fd = new FormData();
+      fd.append('image', file);
+      $('diagnosis-result').innerHTML = '<span style="color:#6ee7b7;">Running real model inference...</span>';
+      try {
+        const res = await fetch('/api/predict', { method: 'POST', body: fd });
+        const data = await res.json();
+        if (data.error) { $('diagnosis-result').innerHTML = '<span style="color:#f87171;">Error: ' + data.error + '</span>'; return; }
+        const probs = data.class_probabilities || {};
+        const probStr = Object.entries(probs).map(([k, v]) => `<div><small>${k}: ${(v*100).toFixed(1)}%</small></div>`).join('');
+        $('diagnosis-result').innerHTML = `
+          <div style="padding:10px;background:#10221d;border:1px solid #204034;border-radius:6px;margin-top:6px;">
+            <div style="color:#6ee7b7;font-weight:bold;font-size:14px;text-transform:uppercase;">${data.predicted_class}</div>
+            <div style="font-size:12px;margin:4px 0;">Confidence: <b>${(data.confidence * 100).toFixed(1)}%</b> · Latency: <b>${Math.round(data.inference_time_ms)} ms</b></div>
+            <div style="margin:6px 0;padding-top:6px;border-top:1px dashed #204034;">${probStr}</div>
+            <small style="color:#6b7280;display:block;font-size:10px;line-height:1.2;margin-top:4px;"><i>Note: Confidence indicates classifier certainty for this image; it does not measure infected leaf area or disease severity.</i></small>
+          </div>`;
+      } catch (err) {
+        $('diagnosis-result').innerHTML = '<span style="color:#f87171;">Request failed: ' + err.message + '</span>';
+      }
+    });
+    window.addEventListener('resize', drawMap); poll(); setInterval(poll, 1000);
+  </script>
+</body>
+</html>
