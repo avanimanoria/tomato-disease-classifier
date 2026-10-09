@@ -150,7 +150,81 @@
       </aside>
     </section>
 
-    <section class="lower-grid"><section class="panel log-panel"><div class="panel-head"><div><p class="eyebrow">EVENT STREAM</p><h2>Spray activity</h2></div><span id="event-count" class="count">0 events</span></div><div id="event-log" class="event-log"><div class="empty-log">No treatment events yet.</div></div></section><section class="panel notes-panel"><p class="eyebrow">MISSION PROFILE</p><h2>Variable-rate protocol</h2><p>Severity is sampled across a 10 × 10 field grid. Treatment activates above 5% disease coverage and scales from 2 to 6 ml/sec.</p><div class="protocol"><span>LOW <b>2 ml/s · 2s</b></span><span>MEDIUM <b>4 ml/s · 4s</b></span><span>HIGH <b>6 ml/s · 6s</b></span></div></section></section>
+    <section class="lower-grid">
+      <section class="panel log-panel">
+        <div class="panel-head">
+          <div><p class="eyebrow">EVENT STREAM</p><h2>Spray activity</h2></div>
+          <span id="event-count" class="count">0 events</span>
+        </div>
+        <div id="event-log" class="event-log"><div class="empty-log">No treatment events yet.</div></div>
+      </section>
+
+      <section class="panel notes-panel" id="severity-guide-panel">
+        <p class="eyebrow">REFERENCE GUIDE</p>
+        <h2>Severity Classification Guide</h2>
+        <p style="margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;">
+          Severity bands are assigned from the estimated percentage of visible leaf area affected—not from classifier confidence.
+        </p>
+
+        <div style="margin-top:14px;border:1px solid var(--line);border-radius:5px;overflow-x:auto;background:var(--panel-2);">
+          <table style="width:100%;min-width:350px;border-collapse:collapse;font-size:11px;text-align:left;">
+            <thead>
+              <tr style="border-bottom:1px solid var(--line);background:rgba(201,231,208,0.04);">
+                <th style="padding:7px 8px;color:var(--muted);font-weight:600;font-family:'DM Mono',monospace;letter-spacing:0.4px;">Estimated affected leaf area</th>
+                <th style="padding:7px 8px;color:var(--muted);font-weight:600;font-family:'DM Mono',monospace;letter-spacing:0.4px;">Assigned band</th>
+                <th style="padding:7px 8px;color:var(--muted);font-weight:600;font-family:'DM Mono',monospace;letter-spacing:0.4px;text-align:right;">Reference spray flow (ml/s)</th>
+                <th style="padding:7px 8px;color:var(--muted);font-weight:600;font-family:'DM Mono',monospace;letter-spacing:0.4px;text-align:right;">Duration (s)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid rgba(201,231,208,0.06);">
+                <td style="padding:6px 8px;color:var(--ink);font-family:'DM Mono',monospace;">0%</td>
+                <td style="padding:6px 8px;color:#3f765d;font-weight:600;">None</td>
+                <td style="padding:6px 8px;color:var(--ink);font-family:'DM Mono',monospace;text-align:right;">No spray</td>
+                <td style="padding:6px 8px;color:var(--ink);font-family:'DM Mono',monospace;text-align:right;">0 s</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(201,231,208,0.06);">
+                <td style="padding:6px 8px;color:var(--ink);font-family:'DM Mono',monospace;">&gt;0% to 5%</td>
+                <td style="padding:6px 8px;color:#75b7a0;font-weight:600;">Very low</td>
+                <td style="padding:6px 8px;color:var(--ink);font-family:'DM Mono',monospace;text-align:right;">2 ml/s</td>
+                <td style="padding:6px 8px;color:var(--ink);font-family:'DM Mono',monospace;text-align:right;">1 s</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(201,231,208,0.06);">
+                <td style="padding:6px 8px;color:var(--ink);font-family:'DM Mono',monospace;">&gt;5% to 10%</td>
+                <td style="padding:6px 8px;color:#d5b646;font-weight:600;">Low</td>
+                <td style="padding:6px 8px;color:var(--ink);font-family:'DM Mono',monospace;text-align:right;">2 ml/s</td>
+                <td style="padding:6px 8px;color:var(--ink);font-family:'DM Mono',monospace;text-align:right;">2 s</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(201,231,208,0.06);">
+                <td style="padding:6px 8px;color:var(--ink);font-family:'DM Mono',monospace;">&gt;10% to 25%</td>
+                <td style="padding:6px 8px;color:#e6cb61;font-weight:600;">Medium</td>
+                <td style="padding:6px 8px;color:var(--ink);font-family:'DM Mono',monospace;text-align:right;">4 ml/s</td>
+                <td style="padding:6px 8px;color:var(--ink);font-family:'DM Mono',monospace;text-align:right;">4 s</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(201,231,208,0.06);">
+                <td style="padding:6px 8px;color:var(--ink);font-family:'DM Mono',monospace;">&gt;25% to 50%</td>
+                <td style="padding:6px 8px;color:#d37e3f;font-weight:600;">High</td>
+                <td style="padding:6px 8px;color:var(--ink);font-family:'DM Mono',monospace;text-align:right;">6 ml/s</td>
+                <td style="padding:6px 8px;color:var(--ink);font-family:'DM Mono',monospace;text-align:right;">6 s</td>
+              </tr>
+              <tr>
+                <td style="padding:6px 8px;color:var(--ink);font-family:'DM Mono',monospace;">&gt;50% to 100%</td>
+                <td style="padding:6px 8px;color:#c8584c;font-weight:600;">Critical</td>
+                <td style="padding:6px 8px;color:#fca5a5;font-size:10px;font-family:'DM Mono',monospace;text-align:right;">Human review required</td>
+                <td style="padding:6px 8px;color:var(--muted);font-family:'DM Mono',monospace;text-align:right;">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="margin-top:12px;font-size:10px;color:#6b7280;line-height:1.4;">
+          <i>Configurable prototype thresholds. Affected-area estimates are experimental and require validation. These bands do not prescribe pesticide dosage.</i>
+        </p>
+        <p style="margin-top:6px;font-size:10px;color:#6b7280;line-height:1.4;">
+          <i>Proposed dashboard reference mapping only. The active simulator uses a separate severity policy; these assignments do not change spraying behavior. ‘Human review required’ is a reference label, not an implemented approval gate.</i>
+        </p>
+      </section>
+    </section>
   </main>
   <script>
     const state = { map: null, telemetry: null, status: null };
