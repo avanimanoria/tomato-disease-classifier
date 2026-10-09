@@ -97,10 +97,53 @@
                   </div>
                 </div>
               </div>
+
+              <!-- Estimated Visible Leaf Severity Section -->
+              <div id="severity-section" style="border-top:1px solid #204034;padding-top:10px;margin-top:12px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                  <span style="font-size:10px;color:#8fa89b;font-family:'DM Mono',monospace;letter-spacing:0.8px;">ESTIMATED VISIBLE LEAF SEVERITY</span>
+                  <span id="severity-badge" class="live-chip" style="font-size:9px;padding:2px 5px;background:#2d3a22;color:#d5b646;border-color:rgba(213,182,70,0.3);">EXPERIMENTAL</span>
+                </div>
+
+                <div id="severity-data-block">
+                  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+                    <span style="font-size:11px;color:#c4d4c8;">Affected Leaf Area:</span>
+                    <strong id="sev-affected-area" style="font-size:13px;color:#edf3e9;font-family:'DM Mono',monospace;">--%</strong>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+                    <span style="font-size:11px;color:#c4d4c8;">Severity Band:</span>
+                    <strong id="sev-band" style="font-size:12px;color:#e6cb61;font-family:'DM Mono',monospace;">--</strong>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+                    <span style="font-size:10px;color:#8fa89b;">Method:</span>
+                    <span id="sev-method" style="font-size:10px;color:#8fa89b;font-family:'DM Mono',monospace;">Image processing</span>
+                  </div>
+                </div>
+
+                <div id="severity-unavailable-block" style="display:none;padding:6px 8px;background:rgba(219,118,101,0.08);border:1px solid rgba(219,118,101,0.3);border-radius:4px;margin-top:4px;">
+                  <div style="font-size:11px;font-weight:600;color:#fca5a5;margin-bottom:2px;">⚠️ Severity Unavailable</div>
+                  <div id="sev-unavailable-reason" style="font-size:10px;color:#c4d4c8;line-height:1.3;">Measurement could not be obtained reliably.</div>
+                </div>
+
+                <div id="severity-reasons-block" style="display:none;margin-top:6px;padding:6px;background:rgba(230,203,97,0.07);border:1px solid rgba(230,203,97,0.25);border-radius:4px;font-size:10px;color:#fef08a;">
+                  <span id="sev-reasons-text"></span>
+                </div>
+
+                <!-- Optional Lesion / Leaf Overlay Preview -->
+                <div id="severity-overlay-container" style="display:none;margin-top:8px;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                    <span style="font-size:10px;color:#8fa89b;font-family:'DM Mono',monospace;">LEAF & LESION OVERLAY</span>
+                    <span style="font-size:9px;color:#6ee7b7;">Teal: Leaf · Red: Lesion</span>
+                  </div>
+                  <div style="text-align:center;background:#0d1c17;border:1px solid #204034;border-radius:4px;padding:4px;max-height:160px;overflow:hidden;">
+                    <img id="severity-overlay-img" src="" alt="Lesion overlay" style="max-height:150px;max-width:100%;object-fit:contain;border-radius:2px;">
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="classifier-disclaimer" style="font-size:10px;line-height:1.4;color:#6b7280;margin-top:2px;">
-              <i>Classifier confidence is not disease severity. Field mission data is simulated.</i>
+              <i>Experimental visual estimate — verify manually. Classifier confidence is not disease severity. Field mission data is simulated.</i>
             </div>
           </div>
         </section>
@@ -213,7 +256,7 @@
           throw new Error(data.error || 'Prediction failed with status ' + response.status);
         }
 
-        // Render actual model prediction
+        // 1. Render actual model prediction
         $('res-predicted-class').textContent = data.predicted_class.replace('_', ' ');
         $('res-confidence').textContent = (data.confidence * 100).toFixed(1) + '%';
         $('res-latency').textContent = Math.round(data.inference_time_ms) + ' ms';
@@ -231,6 +274,40 @@
 
         $('prob-val-late-blight').textContent = lbProb.toFixed(1) + '%';
         $('prob-bar-late-blight').style.width = Math.min(100, Math.max(0, lbProb)) + '%';
+
+        // 2. Render Severity Section
+        const sev = data.severity;
+        if (sev && sev.status === 'estimated' && sev.affected_leaf_area_percent !== null) {
+          $('severity-data-block').style.display = 'block';
+          $('severity-unavailable-block').style.display = 'none';
+          $('sev-affected-area').textContent = sev.affected_leaf_area_percent.toFixed(1) + '%';
+          $('sev-band').textContent = sev.band_label || (sev.band ? sev.band.toUpperCase() : '--');
+          $('sev-method').textContent = 'Experimental visual estimate';
+
+          if (sev.reasons && sev.reasons.length > 0) {
+            $('severity-reasons-block').style.display = 'block';
+            $('sev-reasons-text').innerHTML = '⚠️ <b>Note:</b> ' + sev.reasons.join('<br>');
+          } else {
+            $('severity-reasons-block').style.display = 'none';
+          }
+
+          if (sev.overlay_image) {
+            $('severity-overlay-img').src = sev.overlay_image;
+            $('severity-overlay-container').style.display = 'block';
+          } else {
+            $('severity-overlay-container').style.display = 'none';
+          }
+        } else {
+          // Severity is unavailable or failed
+          $('severity-data-block').style.display = 'none';
+          $('severity-unavailable-block').style.display = 'block';
+          $('severity-reasons-block').style.display = 'none';
+          $('severity-overlay-container').style.display = 'none';
+          const reasonMsg = (sev && sev.reasons && sev.reasons.length > 0)
+            ? sev.reasons.join(' ')
+            : 'Visible leaf or lesion area could not be segmented reliably.';
+          $('sev-unavailable-reason').textContent = reasonMsg;
+        }
 
         resultsElem.style.display = 'block';
       } catch (err) {

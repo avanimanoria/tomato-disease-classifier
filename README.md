@@ -153,6 +153,12 @@ Open `http://localhost:5000` in any browser.
   - Real-time client-side image preview.
   - Interactive "Classify leaf image" action calling `POST /api/predict`.
   - Visual breakdown of model output: predicted class, overall confidence %, latency (ms), and per-class probability bars for **Healthy**, **Early Blight**, and **Late Blight**.
+  - **Estimated Visible Leaf Severity (Experimental)**:
+    - Measures visible discolored lesion area relative to segmented leaf area: `100 * lesion_pixels / leaf_pixels`.
+    - Configurable severity bands: None (0%), Very low (>0-5%), Low (>5-10%), Medium (>10-25%), High (>25-50%), Critical (>50-100%).
+    - Generates visual leaf contour and candidate lesion overlay.
+    - Explicit quality/reliability guards: returns `Severity unavailable` when background/leaf separation fails or image quality is unsuitable.
+    - *Disclaimer: Experimental visual estimate — not clinically/agronomically validated severity, whole-plant severity, or a pesticide prescription.*
   - Uses the trained `models/best_model.keras` model artifact in real time.
   - Clear distinction between simulated field survey telemetry and authentic machine learning model predictions.
 

@@ -141,6 +141,32 @@ def predict_leaf() -> Any:
                         class_names=_classifier_classes, save_json=False)
     res["is_real_model_inference"] = True
     res["source_model"] = "MobileNetV3Small (Stage 1 trained)"
+
+    # --- Isolated Leaf Severity Estimation ---
+    try:
+        from src.severity_estimation import estimate_leaf_severity
+        severity_result = estimate_leaf_severity(
+            image_input=save_path,
+            predicted_class=res.get("predicted_class"),
+        )
+        res["severity"] = severity_result
+    except Exception as exc:
+        res["severity"] = {
+            "status": "unavailable",
+            "affected_leaf_area_percent": None,
+            "band": None,
+            "band_label": None,
+            "method": "experimental_image_processing",
+            "validated": False,
+            "reliability": "unavailable",
+            "reasons": [f"Severity analysis failed to execute: {str(exc)}"],
+            "disclaimer": (
+                "Experimental visual estimate of visible leaf lesion area, NOT classifier confidence, "
+                "full-plant severity, or a pesticide instruction. Not clinically or agronomically validated."
+            ),
+            "overlay_image": None,
+        }
+
     return jsonify(res)
 
 

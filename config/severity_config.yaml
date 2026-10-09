@@ -1,0 +1,74 @@
+# Configuration for experimental visible leaf-disease severity estimation
+# Note: These are configurable prototype thresholds, not universally validated agronomic metrics.
+
+estimator:
+  method: "experimental_image_processing"
+  validated: false
+
+image_quality:
+  min_width: 64
+  min_height: 64
+  max_boundary_touch_ratio: 0.35   # If too much leaf mask touches image border, leaf may be severely truncated
+  min_leaf_pixel_ratio: 0.05       # Minimum leaf area fraction of total image (at least 5%)
+  max_leaf_pixel_ratio: 0.98       # If leaf covers >98%, background separation may have failed
+  blur_laplacian_var_threshold: 40.0 # Below this is considered blurry/out of focus
+  brightness_min: 25.0             # Mean grayscale intensity too dark
+  brightness_max: 240.0            # Mean grayscale intensity saturated
+
+leaf_segmentation:
+  # Color thresholds in HSV space to capture BOTH healthy green and necrotic/chlorotic tissue (brown/yellow)
+  # Backgrounds in PlantVillage/field are typically gray/white/black boards or soil.
+  # Hue ranges (OpenCV H is 0-179):
+  # Healthy green: H ~ 25 to 88, S ~ 30 to 255, V ~ 30 to 255
+  # Brown/Yellow chlorosis: H ~ 10 to 25, S ~ 30 to 255, V ~ 30 to 220
+  # Necrotic/dark brown: H ~ 0 to 18, S ~ 20 to 200, V ~ 20 to 160
+  hsv_ranges:
+    green:
+      lower: [25, 30, 30]
+      upper: [90, 255, 255]
+    yellow_brown:
+      lower: [10, 30, 30]
+      upper: [25, 255, 230]
+    dark_brown:
+      lower: [0, 25, 20]
+      upper: [18, 220, 160]
+  morphology:
+    kernel_size: 5
+    open_iterations: 1
+    close_iterations: 2
+  fill_holes: true
+
+lesion_detection:
+  # Colour rules inside the leaf mask for diseased regions
+  # Chlorosis (yellow halos) + Necrosis (brown/black dead spots)
+  hsv_ranges:
+    chlorosis:
+      lower: [14, 45, 60]
+      upper: [26, 255, 255]
+    necrosis_brown:
+      lower: [4, 35, 25]
+      upper: [14, 255, 180]
+    necrosis_dark:
+      lower: [0, 20, 15]
+      upper: [180, 255, 65]
+  morphology:
+    kernel_size: 3
+    open_iterations: 1
+    close_iterations: 1
+
+severity_bands:
+  # Boundaries for affected_leaf_area_percent (100 * lesion_pixels / leaf_pixels)
+  # [min_pct, max_pct, band_label]
+  # 0% -> None
+  # >0% to 5% -> Very low
+  # >5% to 10% -> Low
+  # >10% to 25% -> Medium
+  # >25% to 50% -> High
+  # >50% to 100% -> Critical
+  thresholds:
+    - { max: 0.0, band: "none", label: "None" }
+    - { max: 5.0, band: "very_low", label: "Very low" }
+    - { max: 10.0, band: "low", label: "Low" }
+    - { max: 25.0, band: "medium", label: "Medium" }
+    - { max: 50.0, band: "high", label: "High" }
+    - { max: 100.0, band: "critical", label: "Critical" }
