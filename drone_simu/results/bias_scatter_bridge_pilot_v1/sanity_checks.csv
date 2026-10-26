@@ -1,0 +1,15 @@
+check,pass,detail
+field 1: every paired mission treats the identical frozen target set,1,45 targets
+field 2: every paired mission treats the identical frozen target set,1,66 targets
+field 3: every paired mission treats the identical frozen target set,1,32 targets
+only the intended mechanism differs within paired comparisons (cfg diff),1,"enhancements.gusts.sigma_mps, internal2.spray.windEstimateScale"
+oracle localization error is zero in all primary missions,1,max 0 m
+mass balance: emitted = nominal dose x targets; deposited + evaporated <= emitted,1,max residual 0.01 % of emitted
+landing metrics from engine functions: circle union score equals engine targetDeposition,1,max diff 1e-13 pp
+reproducibility of a mission from the stored settings and seeds (|diff| < 1e-9; CSV keeps 15 digits),1,47.167135298329 vs 47.167135298329
+paired runs share field / plants / disease / detection truth (regenerated identically),1,
+regime labels are checked against ACHIEVED bias / scatter (regime_validation.csv),1,see regime validation
+no outcome-based tuning: settings fixed in the runner header before the run,1,"windEstimateScale 0.95 / 0.55, gust sigma 0.08 / 0.45"
+no existing source / results / pilot folders modified (git status),1,
+frozen checksums unchanged (FrozenExperimentIntegrityTest),1,
+MassEnergySprayConservationTest,1,

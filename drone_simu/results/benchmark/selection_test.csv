@@ -1,0 +1,49 @@
+split,condIdx,wind_mps,gust_mps,localization,valveDelay_s,selected,fixedPct,selectorPct,oraclePct,oracleConfig
+test1,1,1,0,groundTruth,0,PurePursuit | wind compensation,51.7911123656149,51.7911123656149,51.7911123656149,PurePursuit | wind compensation
+test1,2,1,0,groundTruth,0.5,PurePursuit | wind + lag comp.,51.7911123656149,51.7911123656149,51.7911123656149,PurePursuit | wind + lag comp.
+test1,3,1,0,flowOdometry,0,PID | wind compensation,32.1968013043473,31.4666113667756,32.1968013043473,PurePursuit | wind compensation
+test1,4,1,0,flowOdometry,0.5,PID | wind compensation,32.1968013043473,28.5099152808445,32.1968013043473,PurePursuit | wind + lag comp.
+test1,5,1,0,kalman,0,PurePursuit | wind compensation,42.418627038875,42.418627038875,42.549065147797,PID | wind compensation
+test1,6,1,0,kalman,0.5,PurePursuit | wind + lag comp.,42.418627038875,42.418627038875,42.549065147797,PID | wind + lag compensation
+test1,7,1,0.5,groundTruth,0,PurePursuit | wind compensation,17.394911346641,17.394911346641,17.394911346641,PurePursuit | wind compensation
+test1,8,1,0.5,groundTruth,0.5,PurePursuit | wind + lag comp.,17.394911346641,17.394911346641,17.394911346641,PurePursuit | wind + lag comp.
+test1,9,1,0.5,flowOdometry,0,PID | wind compensation,13.0677018369686,12.4608373759377,13.0677018369686,PurePursuit | wind compensation
+test1,10,1,0.5,flowOdometry,0.5,PID | wind + lag compensation,13.0677018369686,12.4608373759377,13.0677018369686,PurePursuit | wind + lag comp.
+test1,11,1,0.5,kalman,0,PID | wind compensation,15.4159796412934,15.3474231473645,15.4159796412934,PurePursuit | wind compensation
+test1,12,1,0.5,kalman,0.5,PID | wind + lag compensation,15.4159796412934,15.3474231473645,15.4159796412934,PurePursuit | wind + lag comp.
+test1,13,2.5,0,groundTruth,0,PurePursuit | wind compensation,48.4551757219932,48.4551757219932,48.4551757219932,PurePursuit | wind compensation
+test1,14,2.5,0,groundTruth,0.5,PurePursuit | wind + lag comp.,48.4551757219932,48.4551757219932,48.4551757219932,PurePursuit | wind + lag comp.
+test1,15,2.5,0,flowOdometry,0,PID | wind compensation,38.7406501172786,37.713841851894,38.7406501172786,PurePursuit | wind compensation
+test1,16,2.5,0,flowOdometry,0.5,PID | wind compensation,38.7406501172786,33.9904315657189,38.7406501172786,PurePursuit | wind + lag comp.
+test1,17,2.5,0,kalman,0,PurePursuit | wind compensation,41.3395281053179,41.3395281053179,41.3395281053179,PurePursuit | wind compensation
+test1,18,2.5,0,kalman,0.5,PurePursuit | wind + lag comp.,41.3395281053179,41.3395281053179,41.3395281053179,PurePursuit | wind + lag comp.
+test1,19,2.5,0.5,groundTruth,0,PID | wind compensation,17.2303928412105,16.7200997814631,17.2303928412105,PurePursuit | wind compensation
+test1,20,2.5,0.5,groundTruth,0.5,PID | wind + lag compensation,17.2303928412105,16.7200997814631,17.2303928412105,PurePursuit | wind + lag comp.
+test1,21,2.5,0.5,flowOdometry,0,PID | wind compensation,13.471954232033,13.4452614022916,13.471954232033,PurePursuit | wind compensation
+test1,22,2.5,0.5,flowOdometry,0.5,PID | wind compensation,13.471954232033,11.920134012494,13.471954232033,PurePursuit | wind + lag comp.
+test1,23,2.5,0.5,kalman,0,PID | wind compensation,15.6256689929502,16.3482664348519,16.3482664348519,PID | wind compensation
+test1,24,2.5,0.5,kalman,0.5,PID | wind + lag compensation,15.6256689929502,16.3482664348519,16.3482664348519,PID | wind + lag compensation
+test2,1,1,0,groundTruth,0,PurePursuit | wind compensation,49.6710270762294,49.6710270762294,49.6710270762294,PurePursuit | wind compensation
+test2,2,1,0,groundTruth,0.5,PurePursuit | wind + lag comp.,49.6710270762294,49.6710270762294,49.6710270762294,PurePursuit | wind + lag comp.
+test2,3,1,0,flowOdometry,0,PID | wind compensation,19.1853532133746,18.9867974265001,19.1853532133746,PurePursuit | wind compensation
+test2,4,1,0,flowOdometry,0.5,PID | wind compensation,19.1853532133746,18.717920326627,19.1853532133746,PurePursuit | wind + lag comp.
+test2,5,1,0,kalman,0,PurePursuit | wind compensation,42.6386800222662,42.6386800222662,43.0484610924657,PID | wind compensation
+test2,6,1,0,kalman,0.5,PurePursuit | wind + lag comp.,42.6386800222662,42.6386800222662,43.0484610924657,PID | wind + lag compensation
+test2,7,1,0.5,groundTruth,0,PurePursuit | wind compensation,14.9617422436605,14.9617422436605,14.9617422436605,PurePursuit | wind compensation
+test2,8,1,0.5,groundTruth,0.5,PurePursuit | wind + lag comp.,14.9617422436605,14.9617422436605,14.9617422436605,PurePursuit | wind + lag comp.
+test2,9,1,0.5,flowOdometry,0,PID | wind compensation,12.0558511247461,11.8817001285605,12.0558511247461,PurePursuit | wind compensation
+test2,10,1,0.5,flowOdometry,0.5,PID | wind + lag compensation,12.0558511247461,11.8817001285605,12.0558511247461,PurePursuit | wind + lag comp.
+test2,11,1,0.5,kalman,0,PID | wind compensation,15.1066508923169,14.7055294478687,15.1066508923169,PurePursuit | wind compensation
+test2,12,1,0.5,kalman,0.5,PID | wind + lag compensation,15.1066508923169,14.7055294478687,15.1066508923169,PurePursuit | wind + lag comp.
+test2,13,2.5,0,groundTruth,0,PurePursuit | wind compensation,46.9597700278382,46.9597700278382,46.9597700278382,PurePursuit | wind compensation
+test2,14,2.5,0,groundTruth,0.5,PurePursuit | wind + lag comp.,46.9597700278382,46.9597700278382,46.9597700278382,PurePursuit | wind + lag comp.
+test2,15,2.5,0,flowOdometry,0,PID | wind compensation,19.8785049672285,19.4860964698671,19.8785049672285,PurePursuit | wind compensation
+test2,16,2.5,0,flowOdometry,0.5,PID | wind compensation,19.8785049672285,19.4514074626977,19.8785049672285,PurePursuit | wind + lag comp.
+test2,17,2.5,0,kalman,0,PurePursuit | wind compensation,39.9070925107408,39.9070925107408,40.7003644041024,PID | wind compensation
+test2,18,2.5,0,kalman,0.5,PurePursuit | wind + lag comp.,39.9070925107408,39.9070925107408,40.7003644041024,PID | wind + lag compensation
+test2,19,2.5,0.5,groundTruth,0,PID | wind compensation,14.0010533775899,14.2086915334612,14.2086915334612,PID | wind compensation
+test2,20,2.5,0.5,groundTruth,0.5,PID | wind + lag compensation,14.0010533775899,14.2086915334612,14.2086915334612,PID | wind + lag compensation
+test2,21,2.5,0.5,flowOdometry,0,PID | wind compensation,11.4816494407214,11.0566422057483,11.4816494407214,PurePursuit | wind compensation
+test2,22,2.5,0.5,flowOdometry,0.5,PID | wind compensation,11.4816494407214,10.2786868781672,11.4816494407214,PurePursuit | wind + lag comp.
+test2,23,2.5,0.5,kalman,0,PID | wind compensation,13.7671003495081,13.656548832859,13.7671003495081,PurePursuit | wind compensation
+test2,24,2.5,0.5,kalman,0.5,PID | wind + lag compensation,13.7671003495081,13.656548832859,13.7671003495081,PurePursuit | wind + lag comp.

@@ -1,0 +1,21 @@
+subset,term,effectPct
+best fixed,wind,-1.66610634769355
+best fixed,gust,-37.591814777275
+best fixed,loc,-4.31985450385751
+best fixed,delay,0
+best fixed,wind x gust,1.32355533783919
+best fixed,wind x loc,1.34742770776007
+best fixed,wind x delay,0
+best fixed,gust x loc,5.21072379944049
+best fixed,gust x delay,0
+best fixed,loc x delay,0
+all configs,wind,-1.75061130172866
+all configs,gust,-22.3989825859253
+all configs,loc,-2.3826766367694
+all configs,delay,-0.789907711150882
+all configs,wind x gust,-0.746858729467637
+all configs,wind x loc,0.716935781474113
+all configs,wind x delay,0.0625561898560214
+all configs,gust x loc,2.90530603350592
+all configs,gust x delay,1.40842056819201
+all configs,loc x delay,0.134273104687352

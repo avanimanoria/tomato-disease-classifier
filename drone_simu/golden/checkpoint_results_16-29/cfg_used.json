@@ -1,0 +1,126 @@
+{
+  "internal2": {
+    "enabled": true,
+    "seed": 42,
+    "field": {
+      "polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          30,
+          0
+        ],
+        [
+          24,
+          14
+        ],
+        [
+          6,
+          14
+        ]
+      ],
+      "rowFirstOffset": 1.5,
+      "rowCurveAmp": 0.4,
+      "rowCurveLambda": 30,
+      "edgeMargin": 1,
+      "rowSampleStep": 0.1,
+      "diseaseFraction": 0.15
+    },
+    "detect": {
+      "pDetectDiseased": 0.95,
+      "pFalsePositive": 0.03,
+      "mode": "stochastic"
+    },
+    "wind": {
+      "enabled": false,
+      "speed": 2,
+      "dirDeg": 90
+    },
+    "vehicle": {
+      "windCoupling": 0.01
+    },
+    "ctrl": {
+      "enabled": false,
+      "Kp": 1.5,
+      "Ki": 0.4,
+      "Kd": 0.1,
+      "KpAlong": 1,
+      "integralLimit": 1,
+      "maxCommandSpeed": 2.5
+    },
+    "treat": {
+      "settleTime": 1
+    },
+    "spray": {
+      "compensate": false,
+      "releaseHeight": 1,
+      "nozzleHalfAngle": 15,
+      "footprintRadius": [],
+      "sigmaFraction": 0.5,
+      "flowRate": 25,
+      "duration": 2,
+      "dropletFallSpeed": 1.5,
+      "driftFactor": 1,
+      "windEstimateScale": 1,
+      "gridCell": 0.05,
+      "gridMargin": 4
+    },
+    "metrics": {
+      "canopyRadius": 0.2,
+      "treatedDoseFraction": 0.3,
+      "crossTrackWindow": 3,
+      "stage7SpeedFactor": 0.6
+    }
+  },
+  "experiments": {
+    "outDir": "C:\\Users\\Shraddha.B\\Downloads\\attachments\\results",
+    "A": {
+      "windSpeeds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5
+      ],
+      "pidStates": [
+        false,
+        true
+      ],
+      "detectModes": [
+        "perfectVisible",
+        "stochastic"
+      ]
+    },
+    "C": {
+      "targetCounts": [],
+      "subsetSeed": 7
+    },
+    "D": {
+      "windSpeeds": [
+        0,
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.25,
+        1.5,
+        1.75,
+        2,
+        2.25,
+        2.5
+      ]
+    },
+    "E": {
+      "includeNoWindPidControl": true
+    }
+  },
+  "droneSpeed": 1.5,
+  "dt": 0.1,
+  "cameraFovRadius": 0.6,
+  "flightAltitude": 2,
+  "rowSpacing": 2,
+  "plantSpacing": 0.5
+}

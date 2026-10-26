@@ -1,0 +1,14 @@
+{
+  "description": "8-combination wind/PID/compensation ablation (as supplied by user from an earlier successful run; reference values, never edited)",
+  "columns": ["wind","pid","comp","comp_offset_m","drift_m","cross_track_rmse_m","plants_observed","treated"],
+  "rows": [
+    [0,0,0,0,0,0.124,270,37],
+    [0,0,1,0,0,0.124,270,37],
+    [0,1,0,0,0,0.014,270,37],
+    [0,1,1,0,0,0.014,270,37],
+    [1,0,0,0,1.33,1.152,114,0],
+    [1,0,1,1.33,1.33,1.152,114,15],
+    [1,1,0,0,1.33,0.015,270,0],
+    [1,1,1,1.33,1.33,0.015,270,37]
+  ]
+}

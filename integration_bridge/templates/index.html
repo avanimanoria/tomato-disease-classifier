@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fieldline | MATLAB UAV Mission Control</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    /* ── Badges ─────────────────────────────────────────────────── */
+    .matlab-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 10px; font-family: 'DM Mono', monospace;
+      padding: 3px 8px; background: #1b3329; color: #6ee7b7;
+      border: 1px solid #204034; border-radius: 4px; letter-spacing: 0.5px;
+    }
+    .badge-ai {
+      background: #1c1c2e; color: #a78bfa; border-color: #2d2d4a;
+    }
+    .metric-subnote {
+      font-size: 9px; color: #8fa89b; font-style: italic;
+      display: block; margin-top: 2px;
+    }
+    .map-scale-label {
+      position: absolute; bottom: 8px; left: 12px;
+      font-size: 10px; font-family: 'DM Mono', monospace; color: #8fa89b;
+      background: rgba(16,34,29,0.85); padding: 2px 6px;
+      border-radius: 3px; border: 1px solid #204034; pointer-events: none;
+    }
+    /* ── Pass indicator pill ─────────────────────────────────────── */
+    #pass-pill {
+      display: none; font-size: 10px; font-family: 'DM Mono', monospace;
+      padding: 3px 8px; border-radius: 4px; border: 1px solid;
+    }
+    #pass-pill.pass1 { background: #1b3329; color: #6ee7b7; border-color: #204034; }
+    #pass-pill.pass2 { background: #1a1230; color: #c4b5fd; border-color: #3b2f6a; }
+
+    /* ── Plant observation panel ─────────────────────────────────── */
+    #obs-panel {
+      display: none;
+      background: #10221d; border: 1px solid #204034; border-radius: 6px;
+      padding: 10px 12px; margin-top: 10px; font-size: 11px;
+    }
+    #obs-panel h3 {
+      font-size: 10px; font-family: 'DM Mono', monospace; color: #8fa89b;
+      text-transform: uppercase; letter-spacing: 1px; margin: 0 0 8px 0;
+    }
+    .obs-row { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; margin-bottom: 4px; }
+    .obs-count { font-size: 18px; font-weight: 700; line-height: 1; }
+    .obs-count.healthy { color: #6ee7b7; }
+    .obs-count.disease { color: #f87171; }
+    .obs-count.error   { color: #fb923c; }
+    .obs-count.muted   { color: #8fa89b; }
+
+    /* ── Treatment / spray panel ─────────────────────────────────── */
+    #spray-panel {
+      display: none;
+      background: #0f0a22; border: 1px solid #3b2f6a; border-radius: 6px;
+      padding: 10px 12px; margin-top: 10px; font-size: 11px;
+    }
+    #spray-panel h3 {
+      font-size: 10px; font-family: 'DM Mono', monospace; color: #a78bfa;
+      text-transform: uppercase; letter-spacing: 1px; margin: 0 0 8px 0;
+    }
+    #current-target-box {
+      background: #150d30; border: 1px solid #4c3888; border-radius: 4px;
+      padding: 8px; margin-top: 8px; font-size: 11px; font-family: 'DM Mono', monospace;
+    }
+    .spray-active { color: #c4b5fd; }
+    .spray-blocked { color: #f87171; }
+    #spray-bar-wrap { height: 4px; background: #1e1240; border-radius: 2px; margin-top: 6px; }
+    #spray-bar      { height: 4px; background: #a78bfa; border-radius: 2px; width: 0%; transition: width 0.25s; }
+    .disclosure-note {
+      font-size: 9px; color: #5a4e72; margin-top: 6px;
+      font-style: italic; line-height: 1.4;
+    }
+
+    /* ── Computing indicator ─────────────────────────────────────── */
+    #mission-computing-indicator {
+      display: none; margin-top: 10px; padding: 8px;
+      background: #10221d; border: 1px solid #204034; border-radius: 4px;
+      font-size: 11px; color: #6ee7b7; font-family: 'DM Mono', monospace; text-align: center;
+    }
+    /* Mode toggle */
+    .mode-toggle { display:flex; gap: 8px; margin-top:8px; }
+    .mode-toggle label { font-size:11px; color:#8fa89b; display:flex; align-items:center; gap:4px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">+</span>
+        <div>
+          <p class="eyebrow">AUTONOMOUS FIELD OPS · MATLAB POWERED</p>
+          <h1>Fieldline <span id="mode-header-label">/ MATLAB Navigation Engine</span></h1>
+        </div>
+      </div>
+      <div class="mission-state">
+        <span id="status-dot" class="status-dot"></span>
+        <span id="mission-status">READY</span>
+        <span class="divider"></span>
+        <span id="pass-pill" class="pass1">PASS 1</span>
+        <span class="divider"></span>
+        <span id="mission-timer">00:00</span>
+      </div>
+    </header>
+
+    <section class="workspace">
+      <!-- Live Survey / Field Telemetry Panel -->
+      <div class="map-panel panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">AUTHORITATIVE NAVIGATION</p>
+            <h2>Field Survey &amp; Trajectory</h2>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+            <span class="matlab-badge">MATLAB SIMULATION REPLAY</span>
+            <span id="ai-badge" class="matlab-badge badge-ai" style="display:none;">AI INFERENCE</span>
+            <div class="signal"><span></span> ENGINE <b id="battery">100%</b></div>
+          </div>
+        </div>
+
+        <div class="map-wrap" style="position:relative;">
+          <canvas id="field-map" aria-label="Authoritative MATLAB Field Map"></canvas>
+          <div class="map-legend">
+            <span><i id="legend-plant" style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4a7c5e;"></i> Unobserved</span>
+            <span><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#6ee7b7;"></i> Healthy</span>
+            <span><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f87171;"></i> Disease</span>
+            <span><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fb923c;"></i> Error</span>
+            <span><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#facc15;"></i> Low-Conf</span>
+            <span style="display:flex;align-items:center;gap:4px;"><i style="display:inline-block;width:12px;height:2px;background:#facc15;"></i> Trajectory</span>
+            <span style="display:flex;align-items:center;gap:4px;"><i style="display:inline-block;width:12px;height:2px;background:#a78bfa;border-bottom:1px dashed #a78bfa;"></i> Treatment</span>
+          </div>
+          <div class="map-empty" id="map-empty">Configure field dimensions and press Start to launch MATLAB simulation</div>
+          <div class="map-scale-label" id="map-scale-label">Scale: Metres</div>
+        </div>
+
+        <div class="telemetry">
+          <div><span>POSITION</span><strong id="position">0.0m / 0.0m</strong></div>
+          <div><span>HEADING</span><strong id="heading">090°</strong></div>
+          <div><span>ALTITUDE</span><strong id="altitude">0.0m</strong></div>
+          <div><span>SPEED</span><strong id="speed">0.0 m/s</strong></div>
+        </div>
+      </div>
+
+      <!-- Side Column -->
+      <aside class="side-column">
+        <!-- Mission Setup -->
+        <section class="panel control-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">MISSION SETUP</p>
+              <h2>Survey Parameters</h2>
+            </div>
+            <span class="live-chip" style="background:#204034;color:#6ee7b7;">MATLAB R2026b</span>
+          </div>
+
+          <form id="mission-form">
+            <div class="field-row">
+              <label>FIELD LENGTH <span>metres (6–60)</span>
+                <input id="field-length" type="number" min="6" max="60" step="1" value="30" required>
+              </label>
+              <label>FIELD WIDTH <span>metres (6–40)</span>
+                <input id="field-width" type="number" min="6" max="40" step="1" value="20" required>
+              </label>
+            </div>
+            <label>DRONE SPEED <span>metres / second (0.5–2.0)</span>
+              <input id="drone-speed" type="number" min="0.5" max="2.0" step="0.1" value="1.5" required>
+            </label>
+
+            <!-- Mode selector -->
+            <div class="mode-toggle">
+              <label>
+                <input type="radio" name="mission-mode" value="navigation_only" checked>
+                Navigation only
+              </label>
+              <label>
+                <input type="radio" name="mission-mode" value="two_pass">
+                Two-pass (survey + AI + treatment)
+              </label>
+            </div>
+
+            <div class="button-row">
+              <button id="start-button" class="primary" type="submit"><span>▶</span> Start mission</button>
+              <button id="stop-button" class="secondary" type="button">Stop</button>
+            </div>
+            <div id="mission-computing-indicator">
+              ⏳ <span id="progress-msg">Running authoritative MATLAB mission computation...</span>
+            </div>
+          </form>
+        </section>
+
+        <!-- Mission Readout -->
+        <section class="panel stats-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">MISSION READOUT</p>
+              <h2 id="readout-title">MATLAB Survey Progress</h2>
+            </div>
+          </div>
+          <div class="progress-block">
+            <div class="stat-line">
+              <span>Mission progress</span>
+              <strong id="progress-label">0%</strong>
+            </div>
+            <div class="progress"><i id="progress-bar"></i></div>
+          </div>
+          <div class="metric-grid">
+            <div>
+              <span>AREA COVERED</span>
+              <strong id="covered-area">0.0 <small>m²</small></strong>
+            </div>
+            <div>
+              <span>DISEASE POSITIVE</span>
+              <strong id="disease-count" style="color:#8fa89b;">-- <small>plants</small></strong>
+              <span class="metric-subnote" id="disease-note">Unavailable (Nav Only)</span>
+            </div>
+            <div>
+              <span>SPRAY EMITTED</span>
+              <strong id="spray-used" style="color:#8fa89b;">-- <small>mL</small></strong>
+              <span class="metric-subnote" id="spray-note">Unavailable (Nav Only)</span>
+            </div>
+            <div>
+              <span>PLANTS IN FIELD</span>
+              <strong id="plants-total">--</strong>
+            </div>
+          </div>
+
+          <!-- Pass 1 plant observation panel (two-pass only) -->
+          <div id="obs-panel">
+            <h3>Pass 1 — Observation Summary</h3>
+            <div class="obs-row">
+              <span class="obs-count healthy" id="obs-healthy">0</span>
+              <span style="color:#8fa89b;">healthy</span>
+              <span class="obs-count disease" id="obs-disease">0</span>
+              <span style="color:#8fa89b;">disease</span>
+              <span class="obs-count error" id="obs-error">0</span>
+              <span style="color:#8fa89b;">error/fault</span>
+              <span class="obs-count muted" id="obs-unobs">0</span>
+              <span style="color:#8fa89b;">unobserved</span>
+            </div>
+          </div>
+
+          <!-- Pass 2 spray panel (two-pass only) -->
+          <div id="spray-panel">
+            <h3>Pass 2 — Treatment Flight</h3>
+            <div class="obs-row">
+              <span class="obs-count" id="treat-targets" style="color:#c4b5fd;">0</span>
+              <span style="color:#8fa89b;">targets</span>
+              <span class="obs-count" id="treat-volume" style="color:#c4b5fd;">0.0</span>
+              <span style="color:#8fa89b;">mL emitted</span>
+            </div>
+            <div id="current-target-box">
+              <div id="current-target-inner" style="color:#5a4e72;">No active treatment target</div>
+            </div>
+            <div class="disclosure-note">
+              Pass 2 reuses Pass 1 assigned images (no live camera).
+              Severity is precomputed; revealed at treatment leg arrival.
+              Simulation-only timing. One configured flow rate: 25 mL/s.
+            </div>
+          </div>
+        </section>
+
+        <!-- System Architecture notes -->
+        <section class="panel notes-panel">
+          <p class="eyebrow">SYSTEM ARCHITECTURE</p>
+          <h2>MATLAB + AI Integration</h2>
+          <p style="margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;">
+            Authoritative navigation from MATLAB. Python AI classifies images pre-flight. Results revealed during replay.
+          </p>
+          <div style="margin-top:12px;font-size:11px;font-family:'DM Mono',monospace;color:#a8c4b8;line-height:1.6;background:#10221d;padding:10px;border:1px solid #204034;border-radius:4px;">
+            • Field &amp; Path: <code>runHeadlessTwoPass.m</code><br>
+            • Survey Kinematics: <code>runSurveyPass + flyReference</code><br>
+            • Plant Detection: <code>detectPlants.m</code><br>
+            • AI Inference: <code>BridgeInferenceEngine (port 5005)</code><br>
+            • Treatment Routing: <code>runTreatmentPass.m (Stage A patch)</code>
+          </div>
+        </section>
+      </aside>
+    </section>
+
+    <!-- Lower Section -->
+    <section class="lower-grid">
+      <section class="panel log-panel">
+        <div class="panel-head">
+          <div><p class="eyebrow">FLIGHT LOG</p><h2>Navigation &amp; Inference Events</h2></div>
+          <span id="event-count" class="count">0 steps</span>
+        </div>
+        <div id="event-log" class="event-log">
+          <div class="empty-log">Configure field dimensions and start mission to view authoritative flight logs.</div>
+        </div>
+      </section>
+
+      <section class="panel notes-panel" id="plant-detail-panel" style="display:none;">
+        <p class="eyebrow">CURRENT PLANT</p>
+        <h2 id="detail-plant-id">—</h2>
+        <div id="detail-content" style="margin-top:8px;font-size:11px;font-family:'DM Mono',monospace;color:#a8c4b8;line-height:1.6;background:#10221d;padding:10px;border:1px solid #204034;border-radius:4px;">
+          <div>Image: <span id="detail-image">—</span></div>
+          <div>Class: <span id="detail-class">—</span></div>
+          <div>Confidence: <span id="detail-conf">—</span></div>
+          <div>Severity: <span id="detail-severity">—</span></div>
+          <div>Observed: <span id="detail-obs-t">—</span></div>
+          <div>Status: <span id="detail-status">—</span></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    // ── State ────────────────────────────────────────────────────────────
+    const state = { map: null, telemetry: null, status: null };
+    const $ = (id) => document.getElementById(id);
+    const canvas = $('field-map');
+    const ctx = canvas.getContext('2d');
+
+    let isTwoPass = false;
+    let activeTargetId = null;
+    let sprayLog = [];
+    let lastPlantId = null;
+
+    // ── Map drawing ───────────────────────────────────────────────────────
+    function plantColor(p) {
+      const ds = p.display_state;
+      if (!ds || ds === 'unobserved') return 'rgba(63,118,93,0.4)';
+      if (ds === 'healthy')           return '#6ee7b7';
+      if (ds === 'disease_positive')  return '#f87171';
+      if (ds === 'error')             return '#fb923c';
+      if (ds === 'low_confidence')    return '#facc15';
+      // treatment targets with severity revealed
+      if (p.severity_band === 'high' || p.severity_band === 'medium') return '#f87171';
+      return '#a8c4b8';
+    }
+
+    function plantRadius(p) {
+      return p.display_state && p.display_state !== 'unobserved' ? 3.5 : 2.0;
+    }
+
+    function drawMap() {
+      const rect = canvas.getBoundingClientRect();
+      const ratio = window.devicePixelRatio || 1;
+      canvas.width  = rect.width  * ratio;
+      canvas.height = rect.height * ratio;
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+      const w = rect.width, h = rect.height;
+      ctx.fillStyle = '#10221d';
+      ctx.fillRect(0, 0, w, h);
+
+      if (!state.map || !state.map.field_dimensions) return;
+
+      const fLen = state.map.field_dimensions.length || 30;
+      const fWid = state.map.field_dimensions.width  || 20;
+      const pad  = 36;
+      const availW = w - pad * 2, availH = h - pad * 2;
+      const scale  = Math.min(availW / fLen, availH / fWid);
+      const fieldPxW = fLen * scale, fieldPxH = fWid * scale;
+      const originX  = pad + (availW - fieldPxW) / 2;
+      const originY  = h - pad - (availH - fieldPxH) / 2;
+
+      const tx = (xm) => originX + xm * scale;
+      const ty = (ym) => originY - ym * scale;
+
+      $('map-scale-label').textContent =
+        `Field: ${fLen.toFixed(1)}m × ${fWid.toFixed(1)}m | Scale: ${scale.toFixed(1)} px/m`;
+
+      // 1. Field polygon
+      ctx.strokeStyle = '#2d5343'; ctx.lineWidth = 2;
+      ctx.fillStyle   = 'rgba(25,46,37,0.4)';
+      ctx.beginPath();
+      if (state.map.field_polygon && state.map.field_polygon.length >= 3) {
+        state.map.field_polygon.forEach((pt, i) => {
+          const cx = tx(pt[0]), cy = ty(pt[1]);
+          i === 0 ? ctx.moveTo(cx, cy) : ctx.lineTo(cx, cy);
+        });
+        ctx.closePath();
+      } else {
+        ctx.rect(tx(0), ty(fWid), fieldPxW, fieldPxH);
+      }
+      ctx.fill(); ctx.stroke();
+
+      // 2. Reference path (dashed)
+      if (state.map.reference_path && state.map.reference_path.length > 1) {
+        ctx.save();
+        ctx.setLineDash([4, 4]);
+        ctx.strokeStyle = 'rgba(110,231,183,0.35)'; ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        state.map.reference_path.forEach((pt, i) => {
+          i === 0 ? ctx.moveTo(tx(pt[0]), ty(pt[1])) : ctx.lineTo(tx(pt[0]), ty(pt[1]));
+        });
+        ctx.stroke(); ctx.restore();
+      }
+
+      // 3. Trajectory (colour by pass)
+      if (state.map.trajectory && state.map.trajectory.length > 1) {
+        // Split survey vs treatment segments
+        const allSteps = [
+          ...(state.map._survey_steps   || []),
+          ...(state.map._treatment_steps || [])
+        ];
+        ctx.save();
+        let inTreatment = false;
+        state.map.trajectory.forEach((pt, i) => {
+          const step = allSteps[i];
+          const isTmt = step && step.leg_kind && step.leg_kind !== 'survey';
+          if (i === 0) {
+            ctx.beginPath(); ctx.moveTo(tx(pt[0]), ty(pt[1]));
+            inTreatment = isTmt;
+          } else if (isTmt !== inTreatment) {
+            ctx.strokeStyle = inTreatment ? '#a78bfa' : '#facc15';
+            ctx.lineWidth   = inTreatment ? 2.5 : 2;
+            ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(tx(pt[0]), ty(pt[1]));
+            inTreatment = isTmt;
+          } else {
+            ctx.lineTo(tx(pt[0]), ty(pt[1]));
+          }
+          if (i === state.map.trajectory.length - 1) {
+            ctx.strokeStyle = inTreatment ? '#a78bfa' : '#facc15';
+            ctx.lineWidth   = inTreatment ? 2.5 : 2;
+            ctx.stroke();
+          }
+        });
+        ctx.restore();
+      }
+
+      // 4. Plants
+      if (state.map.plants && state.map.plants.length > 0) {
+        state.map.plants.forEach((p) => {
+          const cx = tx(p.x), cy = ty(p.y);
+          const r  = plantRadius(p);
+          ctx.beginPath();
+          ctx.arc(cx, cy, r, 0, Math.PI * 2);
+          ctx.fillStyle = plantColor(p);
+          ctx.fill();
+          // Glow ring for treatment targets in Pass 2
+          if (isTwoPass && p.severity_band && p.display_state === 'disease_positive') {
+            ctx.save();
+            ctx.strokeStyle = '#f87171'; ctx.lineWidth = 1;
+            ctx.globalAlpha = 0.5;
+            ctx.beginPath(); ctx.arc(cx, cy, r + 3, 0, Math.PI * 2);
+            ctx.stroke(); ctx.restore();
+          }
+        });
+      }
+
+      // 5. Drone
+      if (state.telemetry && state.telemetry.position) {
+        const droneX = tx(state.telemetry.position.x);
+        const droneY = ty(state.telemetry.position.y);
+        const headingDeg = state.telemetry.heading || 90;
+        const pass2 = state.telemetry.pass === 2;
+
+        ctx.save();
+        ctx.translate(droneX, droneY);
+        ctx.rotate((-headingDeg * Math.PI) / 180);
+        ctx.shadowColor = pass2 ? '#a78bfa' : '#b8e3a7';
+        ctx.shadowBlur  = 12;
+        ctx.fillStyle   = pass2 ? '#e0d0ff' : '#f1f5e9';
+        ctx.beginPath();
+        ctx.moveTo(12, 0); ctx.lineTo(-9, -7); ctx.lineTo(-5, 0); ctx.lineTo(-9, 7);
+        ctx.closePath(); ctx.fill();
+        ctx.fillStyle = pass2 ? '#a78bfa' : '#6ee7b7';
+        ctx.beginPath();
+        ctx.arc(-8, -8, 2, 0, Math.PI * 2); ctx.arc(-8, 8, 2, 0, Math.PI * 2);
+        ctx.arc(10, -6, 2, 0, Math.PI * 2); ctx.arc(10, 6, 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    // ── DOM updates ───────────────────────────────────────────────────────
+    function updateDom() {
+      const st = state.status;
+      if (!st) return;
+
+      const statusText = (st.status || 'READY').toUpperCase();
+      $('mission-status').textContent = statusText;
+      $('status-dot').className = 'status-dot ' + (st.status || 'ready').toLowerCase();
+      $('progress-label').textContent = (st.mission_progress || 0) + '%';
+      $('progress-bar').style.width   = (st.mission_progress || 0) + '%';
+      $('covered-area').innerHTML = (st.covered_area_m2 || 0).toFixed(1) + ' <small>m²</small>';
+      $('plants-total').textContent = state.map && state.map.total_plants ? state.map.total_plants : '--';
+
+      const elapsed = st.elapsed_seconds || 0;
+      const mins = String(Math.floor(elapsed / 60)).padStart(2, '0');
+      const secs = String(Math.floor(elapsed % 60)).padStart(2, '0');
+      $('mission-timer').textContent = `${mins}:${secs}`;
+
+      if (st.status === 'Computing') {
+        $('mission-computing-indicator').style.display = 'block';
+        $('start-button').disabled = true;
+        if (st.progress_message) $('progress-msg').textContent = st.progress_message;
+      } else {
+        $('mission-computing-indicator').style.display = 'none';
+        $('start-button').disabled = false;
+      }
+
+      // Two-pass metric updates
+      if (isTwoPass && (st.status === 'Running' || st.status === 'Completed')) {
+        $('disease-count').innerHTML = (st.disease_detected_percent || 0) + ' <small>plants</small>';
+        $('disease-note').textContent = 'Disease-positive (precomputed AI)';
+        $('spray-used').innerHTML    = (st.spray_used_ml || 0.0).toFixed(1) + ' <small>mL</small>';
+        $('spray-note').textContent  = 'Emitted (25 mL/s configured flow)';
+      }
+
+      // Pass indicator
+      const tel = state.telemetry;
+      if (isTwoPass && tel) {
+        const isP2 = tel.pass === 2;
+        const pill = $('pass-pill');
+        pill.style.display = 'inline-block';
+        pill.className = isP2 ? 'pass2' : 'pass1';
+        pill.textContent = isP2 ? 'PASS 2 · TREATMENT' : 'PASS 1 · SURVEY';
+      }
+    }
+
+    function updateTelemetryDom() {
+      const tel = state.telemetry;
+      if (!tel) return;
+      const p = tel.position || { x: 0, y: 0 };
+      $('position').textContent = `${p.x.toFixed(1)}m / ${p.y.toFixed(1)}m`;
+      $('heading').textContent  = String(Math.round(tel.heading || 0)).padStart(3,'0') + '°';
+      $('altitude').textContent = (tel.altitude || 2.0).toFixed(1) + 'm';
+      $('speed').textContent    = (tel.speed || 0.0).toFixed(1) + ' m/s';
+      $('battery').textContent  = (tel.battery || 100) + '%';
+    }
+
+    function updateObservationPanel(summary) {
+      if (!isTwoPass) return;
+      $('obs-panel').style.display = 'block';
+      $('obs-healthy').textContent  = summary.n_healthy      || 0;
+      $('obs-disease').textContent  = summary.n_disease_positive || 0;
+      $('obs-error').textContent    = summary.n_error         || 0;
+      $('obs-unobs').textContent    = summary.n_unobserved    || 0;
+    }
+
+    function updateSprayPanel() {
+      if (!isTwoPass || !state.telemetry) return;
+      const tel = state.telemetry;
+      if (tel.pass !== 2) return;
+      $('spray-panel').style.display = 'block';
+
+      const sum = state.map && state.map.summary ? state.map.summary : {};
+      $('treat-targets').textContent = sum.n_treatment_targets || 0;
+      $('treat-volume').textContent  = (sum.total_emitted_volume_mL || 0).toFixed(1);
+
+      // Current treatment target detail
+      const tid = tel.target_id;
+      if (tid && tid !== 'none' && tid !== lastPlantId) {
+        lastPlantId = tid;
+        updatePlantDetailPanel(tid);
+      }
+
+      const legKind = tel.leg_kind || '';
+      const phase   = tel.phase   || 1;
+      const isSpray = legKind === 'treatment' && phase === 3;
+
+      let inner = '';
+      if (tid && tid !== 'none') {
+        const asmt = state.map && state.map.target_assessment_events
+          ? (state.map.target_assessment_events[tid] || {}) : {};
+        const band   = asmt.severity_band || '—';
+        const pct    = asmt.affected_pct  != null ? asmt.affected_pct.toFixed(1) + '%' : '—';
+        const execD  = asmt.executed_duration_s != null ? asmt.executed_duration_s.toFixed(2) + 's' : '—';
+        const vol    = asmt.emitted_volume_mL   != null ? asmt.emitted_volume_mL.toFixed(1) + ' mL' : '—';
+        const cls    = isSpray ? 'spray-active' : '';
+
+        inner = `<div class="${cls}">
+          <b>Target:</b> ${tid}<br>
+          <b>Severity:</b> ${band} (${pct} area)<br>
+          <b>Duration:</b> ${execD} executed · ${vol} emitted<br>
+          <b>Phase:</b> ${phase === 3 ? '🟣 SPRAYING' : phase === 2 ? 'Settling' : 'Travelling'}<br>
+          <b>Leg:</b> ${legKind}
+        </div>`;
+      } else if (legKind === 'refill') {
+        inner = '<div style="color:#a78bfa;">⛽ Refilling tank...</div>';
+      } else {
+        inner = '<div style="color:#5a4e72;">No active treatment target</div>';
+      }
+      $('current-target-inner').innerHTML = inner;
+    }
+
+    function updatePlantDetailPanel(pid) {
+      if (!pid || !state.map) return;
+      const plants = state.map.plants || [];
+      const plant  = plants.find(p => p.plant_id === pid);
+      if (!plant) return;
+
+      const cls  = state.map.classification_results || {};
+      const asmt = state.map.target_assessment_events || {};
+      const cr   = cls[pid] || {};
+      const ev   = asmt[pid] || {};
+
+      $('plant-detail-panel').style.display = 'block';
+      $('detail-plant-id').textContent = `Plant ${pid}`;
+      $('detail-image').textContent    = cr.image_name || '—';
+      $('detail-class').textContent    = cr.predicted_class || '—';
+      $('detail-conf').textContent     = cr.confidence != null ? (cr.confidence * 100).toFixed(1) + '%' : '—';
+      $('detail-severity').textContent = ev.severity_band
+        ? `${ev.severity_band} (${ev.affected_pct != null ? ev.affected_pct.toFixed(1) + '%' : '?'} area)`
+        : '—';
+      $('detail-obs-t').textContent    = plant.obs_timestamp != null
+        ? `t = ${plant.obs_timestamp.toFixed(2)}s` : 'Unobserved';
+      $('detail-status').textContent   = plant.display_state || '—';
+    }
+
+    // ── Event log ─────────────────────────────────────────────────────────
+    function updateEventLog() {
+      const tel = state.telemetry;
+      if (!tel || !tel.step) return;
+      $('event-count').textContent = `Step ${tel.step} of ${tel.total_steps || '--'}`;
+
+      const isP2    = tel.pass === 2;
+      const phase   = tel.phase || 1;
+      const phaseStr = phase === 3 ? '🟣 SPRAY' : phase === 2 ? '🔵 SETTLE' : '🟢 TRAVEL';
+      const pos     = tel.position || { x: 0, y: 0 };
+      const dotCls  = isP2 ? 'sprayed' : 'healthy';
+      const passStr = isP2 ? 'Pass 2 · Treatment' : 'Pass 1 · Survey';
+      const crossStr = tel.cross_track_m != null ? tel.cross_track_m.toFixed(3) + 'm' : '—';
+
+      $('event-log').innerHTML = `
+        <div class="event">
+          <span class="event-dot ${dotCls}"></span>
+          <div>
+            <b>${passStr} · Step #${tel.step}</b>
+            <small>
+              Pos: ${pos.x.toFixed(2)}m, ${pos.y.toFixed(2)}m ·
+              Heading: ${Math.round(tel.heading || 0)}° ·
+              ${isP2 ? 'Phase: ' + phaseStr : 'Cross-track: ' + crossStr}
+              ${tel.target_id && tel.target_id !== 'none' ? ' · Target: ' + tel.target_id : ''}
+            </small>
+          </div>
+          <strong>${(tel.speed || 0).toFixed(1)} m/s</strong>
+        </div>
+      `;
+    }
+
+    // ── Main poll ─────────────────────────────────────────────────────────
+    async function poll() {
+      try {
+        const [statusRes, telRes, mapRes] = await Promise.all([
+          fetch('/api/mission/status'),
+          fetch('/api/drone/telemetry'),
+          fetch('/api/field/disease_map'),
+        ]);
+        state.status    = await statusRes.json();
+        state.telemetry = await telRes.json();
+        state.map       = await mapRes.json();
+
+        // Sync mode flag
+        isTwoPass = state.status.mission_mode === 'two_pass';
+        $('ai-badge').style.display = isTwoPass ? 'inline-flex' : 'none';
+        $('obs-panel').style.display = isTwoPass && (state.status.status === 'Running' || state.status.status === 'Completed') ? 'block' : 'none';
+        $('spray-panel').style.display = 'none'; // updated in updateSprayPanel
+
+        updateDom();
+        updateTelemetryDom();
+        drawMap();
+        updateEventLog();
+
+        if (isTwoPass && state.map && state.map.summary) {
+          updateObservationPanel(state.map.summary);
+          if (state.telemetry && state.telemetry.pass === 2) {
+            updateSprayPanel();
+          }
+        }
+
+        const hasPlants = state.map && state.map.plants && state.map.plants.length > 0;
+        $('map-empty').style.display = hasPlants ? 'none' : 'grid';
+
+      } catch (err) {
+        console.error('Polling error:', err);
+      }
+    }
+
+    // ── Controls ──────────────────────────────────────────────────────────
+    $('mission-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const modeEl = document.querySelector('input[name="mission-mode"]:checked');
+      const two_pass = modeEl && modeEl.value === 'two_pass';
+
+      const payload = {
+        field_length: Number($('field-length').value),
+        field_width:  Number($('field-width').value),
+        drone_speed:  Number($('drone-speed').value),
+        two_pass:     two_pass,
+      };
+
+      // UI mode label
+      $('mode-header-label').textContent = two_pass
+        ? '/ Two-Pass Mission (Survey + AI + Treatment)'
+        : '/ MATLAB Navigation Engine';
+      $('readout-title').textContent = two_pass
+        ? 'Two-Pass Mission Progress' : 'MATLAB Survey Progress';
+
+      // Reset two-pass specific panels
+      if (!two_pass) {
+        $('obs-panel').style.display   = 'none';
+        $('spray-panel').style.display = 'none';
+        $('pass-pill').style.display   = 'none';
+        $('plant-detail-panel').style.display = 'none';
+        $('disease-count').innerHTML = '-- <small>plants</small>';
+        $('disease-note').textContent = 'Unavailable (Nav Only)';
+        $('spray-used').innerHTML    = '-- <small>mL</small>';
+        $('spray-note').textContent  = 'Unavailable (Nav Only)';
+      }
+      lastPlantId = null;
+
+      try {
+        const res = await fetch('/api/mission/start', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          alert('Mission start rejected: ' + (data.error || 'Unknown error'));
+          return;
+        }
+        $('map-empty').style.display = 'none';
+        await poll();
+      } catch (err) {
+        alert('Network error communicating with gateway: ' + err.message);
+      }
+    });
+
+    $('stop-button').addEventListener('click', async () => {
+      try {
+        await fetch('/api/mission/stop', { method: 'POST' });
+        await poll();
+      } catch (err) { console.error('Stop error:', err); }
+    });
+
+    window.addEventListener('resize', drawMap);
+    poll();
+    setInterval(poll, 250); // 4 Hz smooth replay polling
+  </script>
+</body>
+</html>

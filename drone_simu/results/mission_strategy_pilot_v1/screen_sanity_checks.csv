@@ -1,0 +1,13 @@
+check,pass,detail
+"same truth (plants, diseased count) across strategies in every paired scenario",1,
+"same detector output for twoPass and onePass (identical flagged TP / FP sets)",1,
+"blanket ignores detector output: one flight per field, identical duration / spray across detector levels",1,blanket sprays every plant
+"oracle sprays exactly the truly diseased plants (research-only, excluded from the deployable Pareto set)",1,
+"spray accounting: emitted = nominal dose x sprayed targets (existing accounting)",1,max diff 1.8e-15 L
+"mission time / distance / energy finite and non-negative",1,
+"prevalence sets only the disease truth (exact count = round(p N)); detector draws and geometry unchanged",1,
+"same hardware / spray assumptions across strategies (one cfg per field; strategies differ only in mission plan)",1,by construction: makeField + prep
+"reproducibility from seeds (twoPass mission rebuilt; |diff| < 1e-9)",1,201.800000 s vs 201.800000 s
+"no retuning after seeing outcomes (design fixed in the runner header)",1,
+"no existing source / results / previous pilot folders modified (git status)",1,
+"frozen Experiment F checksums unchanged",1,

@@ -1,21 +1,50 @@
+# Virtual environments
 .venv/
+venv/
+
+# Python cache and temporary files
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+.pytest_cache/
 .ipynb_checkpoints/
-data/raw/
-data/processed/
-data/dataset_archieved/
-data/metadata/test_lock_manifest.json
-models/*.keras
-models/*.h5
-models/*.tflite
-logs/*
-!logs/.gitkeep
-reports/*.png
-reports/*.csv
-reports/*.json
-reports/figures/*
-!reports/figures/.gitkeep
+
+# OS and editor files
 .DS_Store
 .vscode/
-.pytest_cache/
+.idea/
+
+# MATLAB temporary / autosave files
+*.asv
+*.autosave
+*.m~
+slprj/
+codegen/
+
+# Integration bridge transient mission runs and large logs
+integration_bridge/io/mission_*
+integration_bridge/logs/*.log
+!integration_bridge/logs/.gitkeep
+!integration_bridge/io/.gitkeep
+
+# Software model datasets, archives, and model binary files
+software_model/data/raw/
+software_model/data/processed/
+software_model/data/dataset_archieved/
+software_model/data/metadata/test_lock_manifest.json
+software_model/models/*.keras
+software_model/models/*.h5
+software_model/models/*.tflite
+software_model/logs/*
+!software_model/logs/.gitkeep
+
+# Software model reports generated outputs
+software_model/reports/*.png
+software_model/reports/*.csv
+software_model/reports/*.json
+software_model/reports/figures/*
+!software_model/reports/figures/.gitkeep
+
+# Drone sim generated reports
+drone_simu/test_reports/
+drone_simu/demo_reports/

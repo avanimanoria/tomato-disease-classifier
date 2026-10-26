@@ -1,0 +1,6 @@
+rule,accuracy,meanRegret,worstRegret,n
+"B+C analytical Pareto set (exact set match)",0.916666666666667,NaN,NaN,72
+"B+C analytical winner: treatmentSuccess_pct",0.916666666666667,0,0,72
+"B+C analytical winner: emitted_L",1,0,0,72
+"B+C analytical winner: duration_s",1,0,0,72
+"A prevalence threshold for twoPass efficiency (best p* = 0.00, in-sample)",1,NaN,NaN,72

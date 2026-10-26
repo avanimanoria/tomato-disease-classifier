@@ -1,0 +1,12 @@
+# MATLAB temporary / autosave files
+*.asv
+*.autosave
+*.m~
+slprj/
+codegen/
+
+# generated regression reports
+test_reports/
+
+# generated demonstration reports
+demo_reports/

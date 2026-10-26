@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "assumedDefault",
+  "version": "1.0",
+  "label": "assumedDefault (synthetic, no datasheet)",
+  "description": "The simulator's built-in assumed values (config.m). NOT a real drone: every value is a synthetic placeholder chosen to be plausible for a small (~5 kg dry, 2 L) research sprayer.",
+  "parameters": [
+    {"key": "payload.dryMass_kg",          "value": 5.0,  "unit": "kg",   "sourceType": "synthetic", "citation": "", "range": [3, 25]},
+    {"key": "payload.tankCapacity_L",      "value": 2.0,  "unit": "L",    "sourceType": "synthetic", "citation": "default of calculatePesticideCapacity.m", "range": [1, 40]},
+    {"key": "payload.liquidDensity_kgL",   "value": 1.0,  "unit": "kg/L", "sourceType": "synthetic", "citation": "", "range": [0.95, 1.2]},
+    {"key": "payload.refillTime_s",        "value": 30,   "unit": "s",    "sourceType": "synthetic", "citation": "", "range": [10, 300]},
+    {"key": "dynamics.velTimeConstant_s",  "value": 0.3,  "unit": "s",    "sourceType": "synthetic", "citation": "", "range": [0.1, 1.5]},
+    {"key": "dynamics.thrustToWeightFull", "value": 2.0,  "unit": "-",    "sourceType": "synthetic", "citation": "", "range": [1.2, 3.0]},
+    {"key": "dynamics.dragArea_m2",        "value": 0.08, "unit": "m^2",  "sourceType": "synthetic", "citation": "", "range": [0.03, 0.6]},
+    {"key": "energy.battery_Wh",           "value": 222,  "unit": "Wh",   "sourceType": "synthetic", "citation": "6S 10 Ah pack (illustrative)", "range": [100, 3000]},
+    {"key": "energy.reservePct",           "value": 20,   "unit": "%",    "sourceType": "synthetic", "citation": "", "range": [10, 40]},
+    {"key": "energy.rotorDiskArea_m2",     "value": 0.45, "unit": "m^2",  "sourceType": "synthetic", "citation": "4 x 15-inch props (illustrative)", "range": [0.2, 6.0]},
+    {"key": "energy.efficiency",           "value": 0.6,  "unit": "-",    "sourceType": "synthetic", "citation": "", "range": [0.4, 0.8]},
+    {"key": "energy.avionics_W",           "value": 20,   "unit": "W",    "sourceType": "synthetic", "citation": "", "range": [5, 200]}
+  ]
+}

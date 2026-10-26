@@ -1,0 +1,15 @@
+{
+  "_comment": "Copy to profiles/<id>.json and fill from a datasheet or paper. sourceType: manufacturer | literature | synthetic. Every manufacturer / literature value MUST carry a citation (document, page or table, URL, access date) or the profile is rejected (hardwareProfile:uncited). Values outside 'range' are rejected (hardwareProfile:range). Parameters you omit keep the config.m default (synthetic). Keys are cfg.enhancements.<key>.",
+  "schemaVersion": 1,
+  "id": "<id>",
+  "version": "1.0",
+  "label": "<Vendor Model (source)>",
+  "description": "<which vehicle and configuration (rotor count, nozzles, battery), and what is NOT covered>",
+  "parameters": [
+    {"key": "payload.dryMass_kg",          "value": 0, "unit": "kg",  "sourceType": "manufacturer", "citation": "<datasheet, table, URL, accessed YYYY-MM-DD>", "range": [3, 25]},
+    {"key": "payload.tankCapacity_L",      "value": 0, "unit": "L",   "sourceType": "manufacturer", "citation": "<...>", "range": [1, 40]},
+    {"key": "energy.battery_Wh",           "value": 0, "unit": "Wh",  "sourceType": "manufacturer", "citation": "<...>", "range": [100, 3000]},
+    {"key": "energy.rotorDiskArea_m2",     "value": 0, "unit": "m^2", "sourceType": "literature",   "citation": "<derived from prop diameter x count - show the calculation>", "range": [0.2, 6.0]},
+    {"key": "dynamics.thrustToWeightFull", "value": 0, "unit": "-",   "sourceType": "literature",   "citation": "<...>", "range": [1.2, 3.0]}
+  ]
+}

@@ -1,0 +1,2088 @@
+{
+  "P001": {
+    "plant_id": "P001",
+    "numeric_index": 1,
+    "image_path": "software_model/data/processed/val/early_blight/img_005836333682.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "1": {
+    "plant_id": "P001",
+    "numeric_index": 1,
+    "image_path": "software_model/data/processed/val/early_blight/img_005836333682.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P002": {
+    "plant_id": "P002",
+    "numeric_index": 2,
+    "image_path": "software_model/data/processed/val/late_blight/img_0187a0dbcfae.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "2": {
+    "plant_id": "P002",
+    "numeric_index": 2,
+    "image_path": "software_model/data/processed/val/late_blight/img_0187a0dbcfae.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P003": {
+    "plant_id": "P003",
+    "numeric_index": 3,
+    "image_path": "software_model/data/processed/val/healthy/img_04d9375c5af0.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "3": {
+    "plant_id": "P003",
+    "numeric_index": 3,
+    "image_path": "software_model/data/processed/val/healthy/img_04d9375c5af0.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P004": {
+    "plant_id": "P004",
+    "numeric_index": 4,
+    "image_path": "software_model/data/processed/val/early_blight/img_0070a2d3a6b1.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "4": {
+    "plant_id": "P004",
+    "numeric_index": 4,
+    "image_path": "software_model/data/processed/val/early_blight/img_0070a2d3a6b1.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P005": {
+    "plant_id": "P005",
+    "numeric_index": 5,
+    "image_path": "software_model/data/processed/val/late_blight/img_019bf2abafba.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "5": {
+    "plant_id": "P005",
+    "numeric_index": 5,
+    "image_path": "software_model/data/processed/val/late_blight/img_019bf2abafba.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P006": {
+    "plant_id": "P006",
+    "numeric_index": 6,
+    "image_path": "software_model/data/processed/val/healthy/img_065182ef0cab.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "6": {
+    "plant_id": "P006",
+    "numeric_index": 6,
+    "image_path": "software_model/data/processed/val/healthy/img_065182ef0cab.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P007": {
+    "plant_id": "P007",
+    "numeric_index": 7,
+    "image_path": "software_model/data/processed/val/early_blight/img_01adcdf0f680.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "7": {
+    "plant_id": "P007",
+    "numeric_index": 7,
+    "image_path": "software_model/data/processed/val/early_blight/img_01adcdf0f680.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P008": {
+    "plant_id": "P008",
+    "numeric_index": 8,
+    "image_path": "software_model/data/processed/val/late_blight/img_03031ee64884.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "8": {
+    "plant_id": "P008",
+    "numeric_index": 8,
+    "image_path": "software_model/data/processed/val/late_blight/img_03031ee64884.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P009": {
+    "plant_id": "P009",
+    "numeric_index": 9,
+    "image_path": "software_model/data/processed/val/healthy/img_065a72f6b868.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "9": {
+    "plant_id": "P009",
+    "numeric_index": 9,
+    "image_path": "software_model/data/processed/val/healthy/img_065a72f6b868.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P010": {
+    "plant_id": "P010",
+    "numeric_index": 10,
+    "image_path": "software_model/data/processed/val/early_blight/img_0364f2dbe812.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "10": {
+    "plant_id": "P010",
+    "numeric_index": 10,
+    "image_path": "software_model/data/processed/val/early_blight/img_0364f2dbe812.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P011": {
+    "plant_id": "P011",
+    "numeric_index": 11,
+    "image_path": "software_model/data/processed/val/late_blight/img_03242cf06552.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "11": {
+    "plant_id": "P011",
+    "numeric_index": 11,
+    "image_path": "software_model/data/processed/val/late_blight/img_03242cf06552.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P012": {
+    "plant_id": "P012",
+    "numeric_index": 12,
+    "image_path": "software_model/data/processed/val/healthy/img_07a8303d3e2c.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "12": {
+    "plant_id": "P012",
+    "numeric_index": 12,
+    "image_path": "software_model/data/processed/val/healthy/img_07a8303d3e2c.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P013": {
+    "plant_id": "P013",
+    "numeric_index": 13,
+    "image_path": "software_model/data/processed/val/early_blight/img_04c5e4ce1b94.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "13": {
+    "plant_id": "P013",
+    "numeric_index": 13,
+    "image_path": "software_model/data/processed/val/early_blight/img_04c5e4ce1b94.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P014": {
+    "plant_id": "P014",
+    "numeric_index": 14,
+    "image_path": "software_model/data/processed/val/late_blight/img_0385fcf2fcc7.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "14": {
+    "plant_id": "P014",
+    "numeric_index": 14,
+    "image_path": "software_model/data/processed/val/late_blight/img_0385fcf2fcc7.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P015": {
+    "plant_id": "P015",
+    "numeric_index": 15,
+    "image_path": "software_model/data/processed/val/healthy/img_0c364ced524e.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "15": {
+    "plant_id": "P015",
+    "numeric_index": 15,
+    "image_path": "software_model/data/processed/val/healthy/img_0c364ced524e.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P016": {
+    "plant_id": "P016",
+    "numeric_index": 16,
+    "image_path": "software_model/data/processed/val/early_blight/img_05b7c579a8d8.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "16": {
+    "plant_id": "P016",
+    "numeric_index": 16,
+    "image_path": "software_model/data/processed/val/early_blight/img_05b7c579a8d8.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P017": {
+    "plant_id": "P017",
+    "numeric_index": 17,
+    "image_path": "software_model/data/processed/val/late_blight/img_05531e18e112.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "17": {
+    "plant_id": "P017",
+    "numeric_index": 17,
+    "image_path": "software_model/data/processed/val/late_blight/img_05531e18e112.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P018": {
+    "plant_id": "P018",
+    "numeric_index": 18,
+    "image_path": "software_model/data/processed/val/healthy/img_0ea36beb8714.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "18": {
+    "plant_id": "P018",
+    "numeric_index": 18,
+    "image_path": "software_model/data/processed/val/healthy/img_0ea36beb8714.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P019": {
+    "plant_id": "P019",
+    "numeric_index": 19,
+    "image_path": "software_model/data/processed/val/early_blight/img_0830754a3510.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "19": {
+    "plant_id": "P019",
+    "numeric_index": 19,
+    "image_path": "software_model/data/processed/val/early_blight/img_0830754a3510.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P020": {
+    "plant_id": "P020",
+    "numeric_index": 20,
+    "image_path": "software_model/data/processed/val/late_blight/img_05a196d63f00.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "20": {
+    "plant_id": "P020",
+    "numeric_index": 20,
+    "image_path": "software_model/data/processed/val/late_blight/img_05a196d63f00.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P021": {
+    "plant_id": "P021",
+    "numeric_index": 21,
+    "image_path": "software_model/data/processed/val/healthy/img_0f998def8766.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "21": {
+    "plant_id": "P021",
+    "numeric_index": 21,
+    "image_path": "software_model/data/processed/val/healthy/img_0f998def8766.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P022": {
+    "plant_id": "P022",
+    "numeric_index": 22,
+    "image_path": "software_model/data/processed/val/early_blight/img_0ae7a3180910.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "22": {
+    "plant_id": "P022",
+    "numeric_index": 22,
+    "image_path": "software_model/data/processed/val/early_blight/img_0ae7a3180910.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P023": {
+    "plant_id": "P023",
+    "numeric_index": 23,
+    "image_path": "software_model/data/processed/val/late_blight/img_05a3f5cf1de8.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "23": {
+    "plant_id": "P023",
+    "numeric_index": 23,
+    "image_path": "software_model/data/processed/val/late_blight/img_05a3f5cf1de8.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P024": {
+    "plant_id": "P024",
+    "numeric_index": 24,
+    "image_path": "software_model/data/processed/val/healthy/img_0fec465605cd.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "24": {
+    "plant_id": "P024",
+    "numeric_index": 24,
+    "image_path": "software_model/data/processed/val/healthy/img_0fec465605cd.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P025": {
+    "plant_id": "P025",
+    "numeric_index": 25,
+    "image_path": "software_model/data/processed/val/early_blight/img_0d9d2f137842.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "25": {
+    "plant_id": "P025",
+    "numeric_index": 25,
+    "image_path": "software_model/data/processed/val/early_blight/img_0d9d2f137842.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P026": {
+    "plant_id": "P026",
+    "numeric_index": 26,
+    "image_path": "software_model/data/processed/val/late_blight/img_05f013a18a70.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "26": {
+    "plant_id": "P026",
+    "numeric_index": 26,
+    "image_path": "software_model/data/processed/val/late_blight/img_05f013a18a70.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P027": {
+    "plant_id": "P027",
+    "numeric_index": 27,
+    "image_path": "software_model/data/processed/val/healthy/img_12b89aab97ed.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "27": {
+    "plant_id": "P027",
+    "numeric_index": 27,
+    "image_path": "software_model/data/processed/val/healthy/img_12b89aab97ed.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P028": {
+    "plant_id": "P028",
+    "numeric_index": 28,
+    "image_path": "software_model/data/processed/val/early_blight/img_0de10f880357.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "28": {
+    "plant_id": "P028",
+    "numeric_index": 28,
+    "image_path": "software_model/data/processed/val/early_blight/img_0de10f880357.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P029": {
+    "plant_id": "P029",
+    "numeric_index": 29,
+    "image_path": "software_model/data/processed/val/late_blight/img_07539d238d10.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "29": {
+    "plant_id": "P029",
+    "numeric_index": 29,
+    "image_path": "software_model/data/processed/val/late_blight/img_07539d238d10.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P030": {
+    "plant_id": "P030",
+    "numeric_index": 30,
+    "image_path": "software_model/data/processed/val/healthy/img_13e4381916db.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "30": {
+    "plant_id": "P030",
+    "numeric_index": 30,
+    "image_path": "software_model/data/processed/val/healthy/img_13e4381916db.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P031": {
+    "plant_id": "P031",
+    "numeric_index": 31,
+    "image_path": "software_model/data/processed/val/early_blight/img_10768136632c.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "31": {
+    "plant_id": "P031",
+    "numeric_index": 31,
+    "image_path": "software_model/data/processed/val/early_blight/img_10768136632c.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P032": {
+    "plant_id": "P032",
+    "numeric_index": 32,
+    "image_path": "software_model/data/processed/val/late_blight/img_0a2cea36ad29.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "32": {
+    "plant_id": "P032",
+    "numeric_index": 32,
+    "image_path": "software_model/data/processed/val/late_blight/img_0a2cea36ad29.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P033": {
+    "plant_id": "P033",
+    "numeric_index": 33,
+    "image_path": "software_model/data/processed/val/healthy/img_14210ce4ef32.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "33": {
+    "plant_id": "P033",
+    "numeric_index": 33,
+    "image_path": "software_model/data/processed/val/healthy/img_14210ce4ef32.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P034": {
+    "plant_id": "P034",
+    "numeric_index": 34,
+    "image_path": "software_model/data/processed/val/early_blight/img_1286edd6aa58.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "34": {
+    "plant_id": "P034",
+    "numeric_index": 34,
+    "image_path": "software_model/data/processed/val/early_blight/img_1286edd6aa58.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P035": {
+    "plant_id": "P035",
+    "numeric_index": 35,
+    "image_path": "software_model/data/processed/val/late_blight/img_0bbb639a6fd3.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "35": {
+    "plant_id": "P035",
+    "numeric_index": 35,
+    "image_path": "software_model/data/processed/val/late_blight/img_0bbb639a6fd3.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P036": {
+    "plant_id": "P036",
+    "numeric_index": 36,
+    "image_path": "software_model/data/processed/val/healthy/img_1436d0846ce9.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "36": {
+    "plant_id": "P036",
+    "numeric_index": 36,
+    "image_path": "software_model/data/processed/val/healthy/img_1436d0846ce9.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P037": {
+    "plant_id": "P037",
+    "numeric_index": 37,
+    "image_path": "software_model/data/processed/val/early_blight/img_128eb723aab8.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "37": {
+    "plant_id": "P037",
+    "numeric_index": 37,
+    "image_path": "software_model/data/processed/val/early_blight/img_128eb723aab8.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P038": {
+    "plant_id": "P038",
+    "numeric_index": 38,
+    "image_path": "software_model/data/processed/val/late_blight/img_0ce9797abda9.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "38": {
+    "plant_id": "P038",
+    "numeric_index": 38,
+    "image_path": "software_model/data/processed/val/late_blight/img_0ce9797abda9.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P039": {
+    "plant_id": "P039",
+    "numeric_index": 39,
+    "image_path": "software_model/data/processed/val/healthy/img_179f59a2dd26.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "39": {
+    "plant_id": "P039",
+    "numeric_index": 39,
+    "image_path": "software_model/data/processed/val/healthy/img_179f59a2dd26.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P040": {
+    "plant_id": "P040",
+    "numeric_index": 40,
+    "image_path": "software_model/data/processed/val/early_blight/img_131015b881b9.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "40": {
+    "plant_id": "P040",
+    "numeric_index": 40,
+    "image_path": "software_model/data/processed/val/early_blight/img_131015b881b9.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P041": {
+    "plant_id": "P041",
+    "numeric_index": 41,
+    "image_path": "software_model/data/processed/val/late_blight/img_1134243f3f66.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "41": {
+    "plant_id": "P041",
+    "numeric_index": 41,
+    "image_path": "software_model/data/processed/val/late_blight/img_1134243f3f66.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P042": {
+    "plant_id": "P042",
+    "numeric_index": 42,
+    "image_path": "software_model/data/processed/val/healthy/img_180d41f0ab48.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "42": {
+    "plant_id": "P042",
+    "numeric_index": 42,
+    "image_path": "software_model/data/processed/val/healthy/img_180d41f0ab48.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P043": {
+    "plant_id": "P043",
+    "numeric_index": 43,
+    "image_path": "software_model/data/processed/val/early_blight/img_13f016c9bf6d.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "43": {
+    "plant_id": "P043",
+    "numeric_index": 43,
+    "image_path": "software_model/data/processed/val/early_blight/img_13f016c9bf6d.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P044": {
+    "plant_id": "P044",
+    "numeric_index": 44,
+    "image_path": "software_model/data/processed/val/late_blight/img_133fdb1af1a0.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "44": {
+    "plant_id": "P044",
+    "numeric_index": 44,
+    "image_path": "software_model/data/processed/val/late_blight/img_133fdb1af1a0.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P045": {
+    "plant_id": "P045",
+    "numeric_index": 45,
+    "image_path": "software_model/data/processed/val/healthy/img_18587675cb12.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "45": {
+    "plant_id": "P045",
+    "numeric_index": 45,
+    "image_path": "software_model/data/processed/val/healthy/img_18587675cb12.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P046": {
+    "plant_id": "P046",
+    "numeric_index": 46,
+    "image_path": "software_model/data/processed/val/early_blight/img_1436c6c7cd8c.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "46": {
+    "plant_id": "P046",
+    "numeric_index": 46,
+    "image_path": "software_model/data/processed/val/early_blight/img_1436c6c7cd8c.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P047": {
+    "plant_id": "P047",
+    "numeric_index": 47,
+    "image_path": "software_model/data/processed/val/late_blight/img_13515b5b5557.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "47": {
+    "plant_id": "P047",
+    "numeric_index": 47,
+    "image_path": "software_model/data/processed/val/late_blight/img_13515b5b5557.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P048": {
+    "plant_id": "P048",
+    "numeric_index": 48,
+    "image_path": "software_model/data/processed/val/healthy/img_1a10f6af2d77.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "48": {
+    "plant_id": "P048",
+    "numeric_index": 48,
+    "image_path": "software_model/data/processed/val/healthy/img_1a10f6af2d77.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P049": {
+    "plant_id": "P049",
+    "numeric_index": 49,
+    "image_path": "software_model/data/processed/val/early_blight/img_17020133e19b.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "49": {
+    "plant_id": "P049",
+    "numeric_index": 49,
+    "image_path": "software_model/data/processed/val/early_blight/img_17020133e19b.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P050": {
+    "plant_id": "P050",
+    "numeric_index": 50,
+    "image_path": "software_model/data/processed/val/late_blight/img_137ce3c03da1.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "50": {
+    "plant_id": "P050",
+    "numeric_index": 50,
+    "image_path": "software_model/data/processed/val/late_blight/img_137ce3c03da1.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P051": {
+    "plant_id": "P051",
+    "numeric_index": 51,
+    "image_path": "software_model/data/processed/val/healthy/img_1b219b79957a.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "51": {
+    "plant_id": "P051",
+    "numeric_index": 51,
+    "image_path": "software_model/data/processed/val/healthy/img_1b219b79957a.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P052": {
+    "plant_id": "P052",
+    "numeric_index": 52,
+    "image_path": "software_model/data/processed/val/early_blight/img_170cb2d0169e.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "52": {
+    "plant_id": "P052",
+    "numeric_index": 52,
+    "image_path": "software_model/data/processed/val/early_blight/img_170cb2d0169e.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P053": {
+    "plant_id": "P053",
+    "numeric_index": 53,
+    "image_path": "software_model/data/processed/val/late_blight/img_13c0bd01f460.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "53": {
+    "plant_id": "P053",
+    "numeric_index": 53,
+    "image_path": "software_model/data/processed/val/late_blight/img_13c0bd01f460.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P054": {
+    "plant_id": "P054",
+    "numeric_index": 54,
+    "image_path": "software_model/data/processed/val/healthy/img_1c003cb3cce4.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "54": {
+    "plant_id": "P054",
+    "numeric_index": 54,
+    "image_path": "software_model/data/processed/val/healthy/img_1c003cb3cce4.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P055": {
+    "plant_id": "P055",
+    "numeric_index": 55,
+    "image_path": "software_model/data/processed/val/early_blight/img_19604296558f.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "55": {
+    "plant_id": "P055",
+    "numeric_index": 55,
+    "image_path": "software_model/data/processed/val/early_blight/img_19604296558f.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P056": {
+    "plant_id": "P056",
+    "numeric_index": 56,
+    "image_path": "software_model/data/processed/val/late_blight/img_14e2071d10dd.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "56": {
+    "plant_id": "P056",
+    "numeric_index": 56,
+    "image_path": "software_model/data/processed/val/late_blight/img_14e2071d10dd.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P057": {
+    "plant_id": "P057",
+    "numeric_index": 57,
+    "image_path": "software_model/data/processed/val/healthy/img_1cc048d7e518.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "57": {
+    "plant_id": "P057",
+    "numeric_index": 57,
+    "image_path": "software_model/data/processed/val/healthy/img_1cc048d7e518.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P058": {
+    "plant_id": "P058",
+    "numeric_index": 58,
+    "image_path": "software_model/data/processed/val/early_blight/img_1b2f922a6815.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "58": {
+    "plant_id": "P058",
+    "numeric_index": 58,
+    "image_path": "software_model/data/processed/val/early_blight/img_1b2f922a6815.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P059": {
+    "plant_id": "P059",
+    "numeric_index": 59,
+    "image_path": "software_model/data/processed/val/late_blight/img_16328946b85b.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "59": {
+    "plant_id": "P059",
+    "numeric_index": 59,
+    "image_path": "software_model/data/processed/val/late_blight/img_16328946b85b.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P060": {
+    "plant_id": "P060",
+    "numeric_index": 60,
+    "image_path": "software_model/data/processed/val/healthy/img_1d51029e038e.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "60": {
+    "plant_id": "P060",
+    "numeric_index": 60,
+    "image_path": "software_model/data/processed/val/healthy/img_1d51029e038e.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P061": {
+    "plant_id": "P061",
+    "numeric_index": 61,
+    "image_path": "software_model/data/processed/val/early_blight/img_1bbc78354da1.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "61": {
+    "plant_id": "P061",
+    "numeric_index": 61,
+    "image_path": "software_model/data/processed/val/early_blight/img_1bbc78354da1.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P062": {
+    "plant_id": "P062",
+    "numeric_index": 62,
+    "image_path": "software_model/data/processed/val/late_blight/img_17025b4f4c17.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "62": {
+    "plant_id": "P062",
+    "numeric_index": 62,
+    "image_path": "software_model/data/processed/val/late_blight/img_17025b4f4c17.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P063": {
+    "plant_id": "P063",
+    "numeric_index": 63,
+    "image_path": "software_model/data/processed/val/healthy/img_1d6c805038ea.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "63": {
+    "plant_id": "P063",
+    "numeric_index": 63,
+    "image_path": "software_model/data/processed/val/healthy/img_1d6c805038ea.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P064": {
+    "plant_id": "P064",
+    "numeric_index": 64,
+    "image_path": "software_model/data/processed/val/early_blight/img_1e24fbb52602.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "64": {
+    "plant_id": "P064",
+    "numeric_index": 64,
+    "image_path": "software_model/data/processed/val/early_blight/img_1e24fbb52602.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P065": {
+    "plant_id": "P065",
+    "numeric_index": 65,
+    "image_path": "software_model/data/processed/val/late_blight/img_19ad11035e66.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "65": {
+    "plant_id": "P065",
+    "numeric_index": 65,
+    "image_path": "software_model/data/processed/val/late_blight/img_19ad11035e66.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P066": {
+    "plant_id": "P066",
+    "numeric_index": 66,
+    "image_path": "software_model/data/processed/val/healthy/img_1f0742a4cdc2.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "66": {
+    "plant_id": "P066",
+    "numeric_index": 66,
+    "image_path": "software_model/data/processed/val/healthy/img_1f0742a4cdc2.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P067": {
+    "plant_id": "P067",
+    "numeric_index": 67,
+    "image_path": "software_model/data/processed/val/early_blight/img_1fd6612a3ea3.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "67": {
+    "plant_id": "P067",
+    "numeric_index": 67,
+    "image_path": "software_model/data/processed/val/early_blight/img_1fd6612a3ea3.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P068": {
+    "plant_id": "P068",
+    "numeric_index": 68,
+    "image_path": "software_model/data/processed/val/late_blight/img_1a34dbb90992.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "68": {
+    "plant_id": "P068",
+    "numeric_index": 68,
+    "image_path": "software_model/data/processed/val/late_blight/img_1a34dbb90992.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P069": {
+    "plant_id": "P069",
+    "numeric_index": 69,
+    "image_path": "software_model/data/processed/val/healthy/img_1f09e51e0097.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "69": {
+    "plant_id": "P069",
+    "numeric_index": 69,
+    "image_path": "software_model/data/processed/val/healthy/img_1f09e51e0097.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P070": {
+    "plant_id": "P070",
+    "numeric_index": 70,
+    "image_path": "software_model/data/processed/val/early_blight/img_215244683419.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "70": {
+    "plant_id": "P070",
+    "numeric_index": 70,
+    "image_path": "software_model/data/processed/val/early_blight/img_215244683419.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P071": {
+    "plant_id": "P071",
+    "numeric_index": 71,
+    "image_path": "software_model/data/processed/val/late_blight/img_1a6194cf6675.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "71": {
+    "plant_id": "P071",
+    "numeric_index": 71,
+    "image_path": "software_model/data/processed/val/late_blight/img_1a6194cf6675.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P072": {
+    "plant_id": "P072",
+    "numeric_index": 72,
+    "image_path": "software_model/data/processed/val/healthy/img_1f3f41d7b36d.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "72": {
+    "plant_id": "P072",
+    "numeric_index": 72,
+    "image_path": "software_model/data/processed/val/healthy/img_1f3f41d7b36d.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P073": {
+    "plant_id": "P073",
+    "numeric_index": 73,
+    "image_path": "software_model/data/processed/val/early_blight/img_2359fc5a443a.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "73": {
+    "plant_id": "P073",
+    "numeric_index": 73,
+    "image_path": "software_model/data/processed/val/early_blight/img_2359fc5a443a.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P074": {
+    "plant_id": "P074",
+    "numeric_index": 74,
+    "image_path": "software_model/data/processed/val/late_blight/img_1b67d563b462.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "74": {
+    "plant_id": "P074",
+    "numeric_index": 74,
+    "image_path": "software_model/data/processed/val/late_blight/img_1b67d563b462.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P075": {
+    "plant_id": "P075",
+    "numeric_index": 75,
+    "image_path": "software_model/data/processed/val/healthy/img_20b7219a9f3f.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "75": {
+    "plant_id": "P075",
+    "numeric_index": 75,
+    "image_path": "software_model/data/processed/val/healthy/img_20b7219a9f3f.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P076": {
+    "plant_id": "P076",
+    "numeric_index": 76,
+    "image_path": "software_model/data/processed/val/early_blight/img_238ec993511d.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "76": {
+    "plant_id": "P076",
+    "numeric_index": 76,
+    "image_path": "software_model/data/processed/val/early_blight/img_238ec993511d.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P077": {
+    "plant_id": "P077",
+    "numeric_index": 77,
+    "image_path": "software_model/data/processed/val/late_blight/img_1c41c058f21d.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "77": {
+    "plant_id": "P077",
+    "numeric_index": 77,
+    "image_path": "software_model/data/processed/val/late_blight/img_1c41c058f21d.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P078": {
+    "plant_id": "P078",
+    "numeric_index": 78,
+    "image_path": "software_model/data/processed/val/healthy/img_212a0463d8aa.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "78": {
+    "plant_id": "P078",
+    "numeric_index": 78,
+    "image_path": "software_model/data/processed/val/healthy/img_212a0463d8aa.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P079": {
+    "plant_id": "P079",
+    "numeric_index": 79,
+    "image_path": "software_model/data/processed/val/early_blight/img_2491760b8c90.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "79": {
+    "plant_id": "P079",
+    "numeric_index": 79,
+    "image_path": "software_model/data/processed/val/early_blight/img_2491760b8c90.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P080": {
+    "plant_id": "P080",
+    "numeric_index": 80,
+    "image_path": "software_model/data/processed/val/late_blight/img_1ebd7e9b6d36.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "80": {
+    "plant_id": "P080",
+    "numeric_index": 80,
+    "image_path": "software_model/data/processed/val/late_blight/img_1ebd7e9b6d36.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P081": {
+    "plant_id": "P081",
+    "numeric_index": 81,
+    "image_path": "software_model/data/processed/val/healthy/img_21fc8b02d762.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "81": {
+    "plant_id": "P081",
+    "numeric_index": 81,
+    "image_path": "software_model/data/processed/val/healthy/img_21fc8b02d762.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P082": {
+    "plant_id": "P082",
+    "numeric_index": 82,
+    "image_path": "software_model/data/processed/val/early_blight/img_24fb24fdf0ea.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "82": {
+    "plant_id": "P082",
+    "numeric_index": 82,
+    "image_path": "software_model/data/processed/val/early_blight/img_24fb24fdf0ea.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P083": {
+    "plant_id": "P083",
+    "numeric_index": 83,
+    "image_path": "software_model/data/processed/val/late_blight/img_1f276526142a.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "83": {
+    "plant_id": "P083",
+    "numeric_index": 83,
+    "image_path": "software_model/data/processed/val/late_blight/img_1f276526142a.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P084": {
+    "plant_id": "P084",
+    "numeric_index": 84,
+    "image_path": "software_model/data/processed/val/healthy/img_2267ff87094e.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "84": {
+    "plant_id": "P084",
+    "numeric_index": 84,
+    "image_path": "software_model/data/processed/val/healthy/img_2267ff87094e.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P085": {
+    "plant_id": "P085",
+    "numeric_index": 85,
+    "image_path": "software_model/data/processed/val/early_blight/img_25bd0f707e9e.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "85": {
+    "plant_id": "P085",
+    "numeric_index": 85,
+    "image_path": "software_model/data/processed/val/early_blight/img_25bd0f707e9e.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P086": {
+    "plant_id": "P086",
+    "numeric_index": 86,
+    "image_path": "software_model/data/processed/val/late_blight/img_1fea353d420f.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "86": {
+    "plant_id": "P086",
+    "numeric_index": 86,
+    "image_path": "software_model/data/processed/val/late_blight/img_1fea353d420f.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P087": {
+    "plant_id": "P087",
+    "numeric_index": 87,
+    "image_path": "software_model/data/processed/val/healthy/img_22ae9cfd55e5.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "87": {
+    "plant_id": "P087",
+    "numeric_index": 87,
+    "image_path": "software_model/data/processed/val/healthy/img_22ae9cfd55e5.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P088": {
+    "plant_id": "P088",
+    "numeric_index": 88,
+    "image_path": "software_model/data/processed/val/early_blight/img_260bbc02eb48.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "88": {
+    "plant_id": "P088",
+    "numeric_index": 88,
+    "image_path": "software_model/data/processed/val/early_blight/img_260bbc02eb48.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P089": {
+    "plant_id": "P089",
+    "numeric_index": 89,
+    "image_path": "software_model/data/processed/val/late_blight/img_1feeba130480.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "89": {
+    "plant_id": "P089",
+    "numeric_index": 89,
+    "image_path": "software_model/data/processed/val/late_blight/img_1feeba130480.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P090": {
+    "plant_id": "P090",
+    "numeric_index": 90,
+    "image_path": "software_model/data/processed/val/healthy/img_23c3772c2669.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "90": {
+    "plant_id": "P090",
+    "numeric_index": 90,
+    "image_path": "software_model/data/processed/val/healthy/img_23c3772c2669.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P091": {
+    "plant_id": "P091",
+    "numeric_index": 91,
+    "image_path": "software_model/data/processed/val/early_blight/img_28368e2e5a92.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "91": {
+    "plant_id": "P091",
+    "numeric_index": 91,
+    "image_path": "software_model/data/processed/val/early_blight/img_28368e2e5a92.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P092": {
+    "plant_id": "P092",
+    "numeric_index": 92,
+    "image_path": "software_model/data/processed/val/late_blight/img_1ff9be82ec0c.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "92": {
+    "plant_id": "P092",
+    "numeric_index": 92,
+    "image_path": "software_model/data/processed/val/late_blight/img_1ff9be82ec0c.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P093": {
+    "plant_id": "P093",
+    "numeric_index": 93,
+    "image_path": "software_model/data/processed/val/healthy/img_25f87d0f6bab.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "93": {
+    "plant_id": "P093",
+    "numeric_index": 93,
+    "image_path": "software_model/data/processed/val/healthy/img_25f87d0f6bab.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P094": {
+    "plant_id": "P094",
+    "numeric_index": 94,
+    "image_path": "software_model/data/processed/val/early_blight/img_2a692dbda30c.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "94": {
+    "plant_id": "P094",
+    "numeric_index": 94,
+    "image_path": "software_model/data/processed/val/early_blight/img_2a692dbda30c.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P095": {
+    "plant_id": "P095",
+    "numeric_index": 95,
+    "image_path": "software_model/data/processed/val/late_blight/img_2000d51691ef.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "95": {
+    "plant_id": "P095",
+    "numeric_index": 95,
+    "image_path": "software_model/data/processed/val/late_blight/img_2000d51691ef.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P096": {
+    "plant_id": "P096",
+    "numeric_index": 96,
+    "image_path": "software_model/data/processed/val/healthy/img_2648336f07db.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "96": {
+    "plant_id": "P096",
+    "numeric_index": 96,
+    "image_path": "software_model/data/processed/val/healthy/img_2648336f07db.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P097": {
+    "plant_id": "P097",
+    "numeric_index": 97,
+    "image_path": "software_model/data/processed/val/early_blight/img_2bc88c4cea46.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "97": {
+    "plant_id": "P097",
+    "numeric_index": 97,
+    "image_path": "software_model/data/processed/val/early_blight/img_2bc88c4cea46.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P098": {
+    "plant_id": "P098",
+    "numeric_index": 98,
+    "image_path": "software_model/data/processed/val/late_blight/img_200b61652d73.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "98": {
+    "plant_id": "P098",
+    "numeric_index": 98,
+    "image_path": "software_model/data/processed/val/late_blight/img_200b61652d73.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P099": {
+    "plant_id": "P099",
+    "numeric_index": 99,
+    "image_path": "software_model/data/processed/val/healthy/img_27401c884d7f.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "99": {
+    "plant_id": "P099",
+    "numeric_index": 99,
+    "image_path": "software_model/data/processed/val/healthy/img_27401c884d7f.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P100": {
+    "plant_id": "P100",
+    "numeric_index": 100,
+    "image_path": "software_model/data/processed/val/early_blight/img_2d1fd050729a.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "100": {
+    "plant_id": "P100",
+    "numeric_index": 100,
+    "image_path": "software_model/data/processed/val/early_blight/img_2d1fd050729a.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P101": {
+    "plant_id": "P101",
+    "numeric_index": 101,
+    "image_path": "software_model/data/processed/val/late_blight/img_22ee9401117c.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "101": {
+    "plant_id": "P101",
+    "numeric_index": 101,
+    "image_path": "software_model/data/processed/val/late_blight/img_22ee9401117c.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P102": {
+    "plant_id": "P102",
+    "numeric_index": 102,
+    "image_path": "software_model/data/processed/val/healthy/img_281abcce24a5.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "102": {
+    "plant_id": "P102",
+    "numeric_index": 102,
+    "image_path": "software_model/data/processed/val/healthy/img_281abcce24a5.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P103": {
+    "plant_id": "P103",
+    "numeric_index": 103,
+    "image_path": "software_model/data/processed/val/early_blight/img_2dbc92eb1f73.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "103": {
+    "plant_id": "P103",
+    "numeric_index": 103,
+    "image_path": "software_model/data/processed/val/early_blight/img_2dbc92eb1f73.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P104": {
+    "plant_id": "P104",
+    "numeric_index": 104,
+    "image_path": "software_model/data/processed/val/late_blight/img_22f5ed6b09aa.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "104": {
+    "plant_id": "P104",
+    "numeric_index": 104,
+    "image_path": "software_model/data/processed/val/late_blight/img_22f5ed6b09aa.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P105": {
+    "plant_id": "P105",
+    "numeric_index": 105,
+    "image_path": "software_model/data/processed/val/healthy/img_28c045c46733.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "105": {
+    "plant_id": "P105",
+    "numeric_index": 105,
+    "image_path": "software_model/data/processed/val/healthy/img_28c045c46733.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P106": {
+    "plant_id": "P106",
+    "numeric_index": 106,
+    "image_path": "software_model/data/processed/val/early_blight/img_2ebea742bbbd.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "106": {
+    "plant_id": "P106",
+    "numeric_index": 106,
+    "image_path": "software_model/data/processed/val/early_blight/img_2ebea742bbbd.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P107": {
+    "plant_id": "P107",
+    "numeric_index": 107,
+    "image_path": "software_model/data/processed/val/late_blight/img_23d87584ba2e.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "107": {
+    "plant_id": "P107",
+    "numeric_index": 107,
+    "image_path": "software_model/data/processed/val/late_blight/img_23d87584ba2e.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P108": {
+    "plant_id": "P108",
+    "numeric_index": 108,
+    "image_path": "software_model/data/processed/val/healthy/img_2dba5ea0e223.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "108": {
+    "plant_id": "P108",
+    "numeric_index": 108,
+    "image_path": "software_model/data/processed/val/healthy/img_2dba5ea0e223.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P109": {
+    "plant_id": "P109",
+    "numeric_index": 109,
+    "image_path": "software_model/data/processed/val/early_blight/img_2ece16395397.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "109": {
+    "plant_id": "P109",
+    "numeric_index": 109,
+    "image_path": "software_model/data/processed/val/early_blight/img_2ece16395397.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P110": {
+    "plant_id": "P110",
+    "numeric_index": 110,
+    "image_path": "software_model/data/processed/val/late_blight/img_24b1ac2343c5.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "110": {
+    "plant_id": "P110",
+    "numeric_index": 110,
+    "image_path": "software_model/data/processed/val/late_blight/img_24b1ac2343c5.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P111": {
+    "plant_id": "P111",
+    "numeric_index": 111,
+    "image_path": "software_model/data/processed/val/healthy/img_305b8087f480.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "111": {
+    "plant_id": "P111",
+    "numeric_index": 111,
+    "image_path": "software_model/data/processed/val/healthy/img_305b8087f480.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P112": {
+    "plant_id": "P112",
+    "numeric_index": 112,
+    "image_path": "software_model/data/processed/val/early_blight/img_308dced9687c.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "112": {
+    "plant_id": "P112",
+    "numeric_index": 112,
+    "image_path": "software_model/data/processed/val/early_blight/img_308dced9687c.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P113": {
+    "plant_id": "P113",
+    "numeric_index": 113,
+    "image_path": "software_model/data/processed/val/late_blight/img_261623109efc.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "113": {
+    "plant_id": "P113",
+    "numeric_index": 113,
+    "image_path": "software_model/data/processed/val/late_blight/img_261623109efc.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P114": {
+    "plant_id": "P114",
+    "numeric_index": 114,
+    "image_path": "software_model/data/processed/val/healthy/img_31fb16c3d81e.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "114": {
+    "plant_id": "P114",
+    "numeric_index": 114,
+    "image_path": "software_model/data/processed/val/healthy/img_31fb16c3d81e.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P115": {
+    "plant_id": "P115",
+    "numeric_index": 115,
+    "image_path": "software_model/data/processed/val/early_blight/img_30907fffce3f.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "115": {
+    "plant_id": "P115",
+    "numeric_index": 115,
+    "image_path": "software_model/data/processed/val/early_blight/img_30907fffce3f.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P116": {
+    "plant_id": "P116",
+    "numeric_index": 116,
+    "image_path": "software_model/data/processed/val/late_blight/img_262c2e2b3dfb.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "116": {
+    "plant_id": "P116",
+    "numeric_index": 116,
+    "image_path": "software_model/data/processed/val/late_blight/img_262c2e2b3dfb.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P117": {
+    "plant_id": "P117",
+    "numeric_index": 117,
+    "image_path": "software_model/data/processed/val/healthy/img_324fc32123d5.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "117": {
+    "plant_id": "P117",
+    "numeric_index": 117,
+    "image_path": "software_model/data/processed/val/healthy/img_324fc32123d5.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P118": {
+    "plant_id": "P118",
+    "numeric_index": 118,
+    "image_path": "software_model/data/processed/val/early_blight/img_323862856dc4.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "118": {
+    "plant_id": "P118",
+    "numeric_index": 118,
+    "image_path": "software_model/data/processed/val/early_blight/img_323862856dc4.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P119": {
+    "plant_id": "P119",
+    "numeric_index": 119,
+    "image_path": "software_model/data/processed/val/late_blight/img_276a1f7639e7.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "119": {
+    "plant_id": "P119",
+    "numeric_index": 119,
+    "image_path": "software_model/data/processed/val/late_blight/img_276a1f7639e7.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P120": {
+    "plant_id": "P120",
+    "numeric_index": 120,
+    "image_path": "software_model/data/processed/val/healthy/img_32607869203f.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "120": {
+    "plant_id": "P120",
+    "numeric_index": 120,
+    "image_path": "software_model/data/processed/val/healthy/img_32607869203f.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P121": {
+    "plant_id": "P121",
+    "numeric_index": 121,
+    "image_path": "software_model/data/processed/val/early_blight/img_34d0292ea0ea.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "121": {
+    "plant_id": "P121",
+    "numeric_index": 121,
+    "image_path": "software_model/data/processed/val/early_blight/img_34d0292ea0ea.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P122": {
+    "plant_id": "P122",
+    "numeric_index": 122,
+    "image_path": "software_model/data/processed/val/late_blight/img_2789a1c8156a.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "122": {
+    "plant_id": "P122",
+    "numeric_index": 122,
+    "image_path": "software_model/data/processed/val/late_blight/img_2789a1c8156a.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P123": {
+    "plant_id": "P123",
+    "numeric_index": 123,
+    "image_path": "software_model/data/processed/val/healthy/img_335c5244b2f1.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "123": {
+    "plant_id": "P123",
+    "numeric_index": 123,
+    "image_path": "software_model/data/processed/val/healthy/img_335c5244b2f1.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P124": {
+    "plant_id": "P124",
+    "numeric_index": 124,
+    "image_path": "software_model/data/processed/val/early_blight/img_37d1fee2294c.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "124": {
+    "plant_id": "P124",
+    "numeric_index": 124,
+    "image_path": "software_model/data/processed/val/early_blight/img_37d1fee2294c.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P125": {
+    "plant_id": "P125",
+    "numeric_index": 125,
+    "image_path": "software_model/data/processed/val/late_blight/img_27aa46ccf7c4.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "125": {
+    "plant_id": "P125",
+    "numeric_index": 125,
+    "image_path": "software_model/data/processed/val/late_blight/img_27aa46ccf7c4.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P126": {
+    "plant_id": "P126",
+    "numeric_index": 126,
+    "image_path": "software_model/data/processed/val/healthy/img_33f94ae97f5b.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "126": {
+    "plant_id": "P126",
+    "numeric_index": 126,
+    "image_path": "software_model/data/processed/val/healthy/img_33f94ae97f5b.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P127": {
+    "plant_id": "P127",
+    "numeric_index": 127,
+    "image_path": "software_model/data/processed/val/early_blight/img_38d8ced46bc1.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "127": {
+    "plant_id": "P127",
+    "numeric_index": 127,
+    "image_path": "software_model/data/processed/val/early_blight/img_38d8ced46bc1.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P128": {
+    "plant_id": "P128",
+    "numeric_index": 128,
+    "image_path": "software_model/data/processed/val/late_blight/img_296905c47235.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "128": {
+    "plant_id": "P128",
+    "numeric_index": 128,
+    "image_path": "software_model/data/processed/val/late_blight/img_296905c47235.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P129": {
+    "plant_id": "P129",
+    "numeric_index": 129,
+    "image_path": "software_model/data/processed/val/healthy/img_34ad7683a739.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "129": {
+    "plant_id": "P129",
+    "numeric_index": 129,
+    "image_path": "software_model/data/processed/val/healthy/img_34ad7683a739.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P130": {
+    "plant_id": "P130",
+    "numeric_index": 130,
+    "image_path": "software_model/data/processed/val/early_blight/img_38ed6aba9159.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "130": {
+    "plant_id": "P130",
+    "numeric_index": 130,
+    "image_path": "software_model/data/processed/val/early_blight/img_38ed6aba9159.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P131": {
+    "plant_id": "P131",
+    "numeric_index": 131,
+    "image_path": "software_model/data/processed/val/late_blight/img_29a3c040dc31.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "131": {
+    "plant_id": "P131",
+    "numeric_index": 131,
+    "image_path": "software_model/data/processed/val/late_blight/img_29a3c040dc31.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P132": {
+    "plant_id": "P132",
+    "numeric_index": 132,
+    "image_path": "software_model/data/processed/val/healthy/img_351b9f5c7b00.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "132": {
+    "plant_id": "P132",
+    "numeric_index": 132,
+    "image_path": "software_model/data/processed/val/healthy/img_351b9f5c7b00.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P133": {
+    "plant_id": "P133",
+    "numeric_index": 133,
+    "image_path": "software_model/data/processed/val/early_blight/img_3f9ece20efbc.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "133": {
+    "plant_id": "P133",
+    "numeric_index": 133,
+    "image_path": "software_model/data/processed/val/early_blight/img_3f9ece20efbc.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P134": {
+    "plant_id": "P134",
+    "numeric_index": 134,
+    "image_path": "software_model/data/processed/val/late_blight/img_2b8575961631.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "134": {
+    "plant_id": "P134",
+    "numeric_index": 134,
+    "image_path": "software_model/data/processed/val/late_blight/img_2b8575961631.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P135": {
+    "plant_id": "P135",
+    "numeric_index": 135,
+    "image_path": "software_model/data/processed/val/healthy/img_356b1a674e25.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "135": {
+    "plant_id": "P135",
+    "numeric_index": 135,
+    "image_path": "software_model/data/processed/val/healthy/img_356b1a674e25.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P136": {
+    "plant_id": "P136",
+    "numeric_index": 136,
+    "image_path": "software_model/data/processed/val/early_blight/img_41f0256f99c6.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "136": {
+    "plant_id": "P136",
+    "numeric_index": 136,
+    "image_path": "software_model/data/processed/val/early_blight/img_41f0256f99c6.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P137": {
+    "plant_id": "P137",
+    "numeric_index": 137,
+    "image_path": "software_model/data/processed/val/late_blight/img_2c52997ec5db.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "137": {
+    "plant_id": "P137",
+    "numeric_index": 137,
+    "image_path": "software_model/data/processed/val/late_blight/img_2c52997ec5db.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P138": {
+    "plant_id": "P138",
+    "numeric_index": 138,
+    "image_path": "software_model/data/processed/val/healthy/img_37796ea66832.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "138": {
+    "plant_id": "P138",
+    "numeric_index": 138,
+    "image_path": "software_model/data/processed/val/healthy/img_37796ea66832.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P139": {
+    "plant_id": "P139",
+    "numeric_index": 139,
+    "image_path": "software_model/data/processed/val/early_blight/img_42f2c45f7d5d.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "139": {
+    "plant_id": "P139",
+    "numeric_index": 139,
+    "image_path": "software_model/data/processed/val/early_blight/img_42f2c45f7d5d.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P140": {
+    "plant_id": "P140",
+    "numeric_index": 140,
+    "image_path": "software_model/data/processed/val/late_blight/img_2c838d36c330.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "140": {
+    "plant_id": "P140",
+    "numeric_index": 140,
+    "image_path": "software_model/data/processed/val/late_blight/img_2c838d36c330.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P141": {
+    "plant_id": "P141",
+    "numeric_index": 141,
+    "image_path": "software_model/data/processed/val/healthy/img_3804a57d61f8.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "141": {
+    "plant_id": "P141",
+    "numeric_index": 141,
+    "image_path": "software_model/data/processed/val/healthy/img_3804a57d61f8.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P142": {
+    "plant_id": "P142",
+    "numeric_index": 142,
+    "image_path": "software_model/data/processed/val/early_blight/img_43390ca31bf6.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "142": {
+    "plant_id": "P142",
+    "numeric_index": 142,
+    "image_path": "software_model/data/processed/val/early_blight/img_43390ca31bf6.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P143": {
+    "plant_id": "P143",
+    "numeric_index": 143,
+    "image_path": "software_model/data/processed/val/late_blight/img_2e0a39bba9e2.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "143": {
+    "plant_id": "P143",
+    "numeric_index": 143,
+    "image_path": "software_model/data/processed/val/late_blight/img_2e0a39bba9e2.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P144": {
+    "plant_id": "P144",
+    "numeric_index": 144,
+    "image_path": "software_model/data/processed/val/healthy/img_3850a2b11fad.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "144": {
+    "plant_id": "P144",
+    "numeric_index": 144,
+    "image_path": "software_model/data/processed/val/healthy/img_3850a2b11fad.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P145": {
+    "plant_id": "P145",
+    "numeric_index": 145,
+    "image_path": "software_model/data/processed/val/early_blight/img_4514ba567cd7.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "145": {
+    "plant_id": "P145",
+    "numeric_index": 145,
+    "image_path": "software_model/data/processed/val/early_blight/img_4514ba567cd7.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P146": {
+    "plant_id": "P146",
+    "numeric_index": 146,
+    "image_path": "software_model/data/processed/val/late_blight/img_2e54b7d16e69.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "146": {
+    "plant_id": "P146",
+    "numeric_index": 146,
+    "image_path": "software_model/data/processed/val/late_blight/img_2e54b7d16e69.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P147": {
+    "plant_id": "P147",
+    "numeric_index": 147,
+    "image_path": "software_model/data/processed/val/healthy/img_393f280b8769.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "147": {
+    "plant_id": "P147",
+    "numeric_index": 147,
+    "image_path": "software_model/data/processed/val/healthy/img_393f280b8769.jpg",
+    "dataset_reference_label_evaluation_only": "healthy",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P148": {
+    "plant_id": "P148",
+    "numeric_index": 148,
+    "image_path": "software_model/data/processed/val/early_blight/img_4517e655f668.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "148": {
+    "plant_id": "P148",
+    "numeric_index": 148,
+    "image_path": "software_model/data/processed/val/early_blight/img_4517e655f668.jpg",
+    "dataset_reference_label_evaluation_only": "early_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "P149": {
+    "plant_id": "P149",
+    "numeric_index": 149,
+    "image_path": "software_model/data/processed/val/late_blight/img_2f0bbd4e6e99.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  },
+  "149": {
+    "plant_id": "P149",
+    "numeric_index": 149,
+    "image_path": "software_model/data/processed/val/late_blight/img_2f0bbd4e6e99.jpg",
+    "dataset_reference_label_evaluation_only": "late_blight",
+    "note": "dataset_reference_label is strictly for post-mission diagnostic audit; model predictions alone drive treatment decisions."
+  }
+}

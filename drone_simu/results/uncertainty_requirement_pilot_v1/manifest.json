@@ -1,0 +1,17 @@
+{
+  "experiment": "uncertainty_requirement_pilot_v1",
+  "model": "reduced-order Monte Carlo (NOT the mission engine)",
+  "masterSeed": 2.0261011E+7,
+  "samplesPerCell": 200000,
+  "commonRandomNumbers": true,
+  "tieTol": 0.005,
+  "material": 0.02,
+  "gridCells": 576,
+  "challengeCells": 1125,
+  "created": "2026-10-11 22:43:36",
+  "matlab": "26.2.0.3386108 (R2026b)",
+  "commit": "3e80e62",
+  "sanityAllPass": true,
+  "runtime_s": 80.2062273,
+  "icaerus": "not used for any parameter (context only, see report)"
+}

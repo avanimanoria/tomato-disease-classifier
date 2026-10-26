@@ -1,0 +1,33 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 5005,
+    "timeout_s": 10.0
+  },
+  "thresholds": {
+    "classification_confidence_demo_threshold": 0.60,
+    "unvalidated_note": "0.60 is an unvalidated demonstration threshold, not an agronomically proven safety boundary."
+  },
+  "paths": {
+    "software_model_root": "software_model",
+    "model_path": "software_model/models/best_model.keras",
+    "class_names_path": "software_model/models/class_names.json",
+    "software_config_path": "software_model/config/config.yaml",
+    "severity_config_path": "software_model/config/severity_config.yaml",
+    "logs_dir": "integration_bridge/logs",
+    "io_dir": "integration_bridge/io"
+  },
+  "transport": {
+    "localhost_rest": {
+      "status": "ready",
+      "endpoint": "http://127.0.0.1:5005/bridge/predict",
+      "requirements": "MATLAB Desktop running locally on the same host and network context."
+    },
+    "file_ipc": {
+      "status": "ready_local_pending_online",
+      "request_dir": "integration_bridge/io/requests",
+      "response_dir": "integration_bridge/io/responses",
+      "requirements": "Shared filesystem access. MATLAB Online cannot see local laptop directories; transport to MATLAB Online is pending separate approval."
+    }
+  }
+}

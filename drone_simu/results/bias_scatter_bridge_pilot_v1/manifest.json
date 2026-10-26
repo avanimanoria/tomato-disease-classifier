@@ -1,0 +1,62 @@
+{
+  "experiment": "bias_scatter_bridge_pilot_v1",
+  "engine": "existing mission engine (runInternal2Scenario), no modification",
+  "biasMechanism": "internal2.spray.windEstimateScale",
+  "scatterMechanism": "enhancements.gusts.sigma_mps",
+  "regimes": [
+    {
+      "regime": "A",
+      "label": "low bias / low scatter",
+      "s": 0.95,
+      "sigma": 0.08
+    },
+    {
+      "regime": "B",
+      "label": "low bias / high scatter",
+      "s": 0.95,
+      "sigma": 0.45
+    },
+    {
+      "regime": "C",
+      "label": "high bias / low scatter",
+      "s": 0.55,
+      "sigma": 0.08
+    },
+    {
+      "regime": "D",
+      "label": "high bias / high scatter",
+      "s": 0.55,
+      "sigma": 0.45
+    }
+  ],
+  "fields": [
+    "F1 trapezoid curved",
+    "F2 rectangle curved",
+    "F3 small trapezoid straight"
+  ],
+  "fieldSeeds": [
+    42,
+    7,
+    101
+  ],
+  "gustSeeds": [
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110
+  ],
+  "missions": 480,
+  "tieTol_pp": 0.5,
+  "canopyRadius_m": 0.2,
+  "created": "2026-10-11 23:34:53",
+  "matlab": "26.2.0.3386108 (R2026b)",
+  "commit": "c3cca01",
+  "sanityAllPass": true,
+  "runtime_s": 4.9156871
+}

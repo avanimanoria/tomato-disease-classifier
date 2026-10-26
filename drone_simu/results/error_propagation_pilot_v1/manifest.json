@@ -1,0 +1,22 @@
+{
+  "experiment": "error_propagation_pilot_v1",
+  "status": "PILOT, 1 field / 1 seed set, n = 16 paired missions",
+  "calibration": "UNCALIBRATED spray model; synthetic sensors; assumed hardware",
+  "created": "2026-10-11 21:04:36",
+  "matlab": "26.2.0.3386108 (R2026b)",
+  "commit": "bfa1a49",
+  "fieldSeed": 42,
+  "gustSeed": 7,
+  "gustSigma_mps": 0.5,
+  "localizationSeed": 3,
+  "wind_mps": 2,
+  "windDirDeg": 90,
+  "valveDelay_s": 0,
+  "energyModel": "on (bookkeeping only)",
+  "scenarioHashes": [
+    "69a0b6616d6d",
+    "73489343c29d"
+  ],
+  "sanityAllPass": true,
+  "runtime_s": 72.5450119
+}

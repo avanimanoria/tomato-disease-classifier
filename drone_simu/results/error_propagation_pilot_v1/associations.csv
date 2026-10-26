@@ -1,0 +1,8 @@
+level,x,y,n,pearson,spearman
+16 runs,loc_rmse_m,track_rmse_m,16,0.389750839678116,0.186215332507196
+16 runs,track_rmse_m,release_total_mean_m,16,0.53397330275449,0.692307692307692
+16 runs,release_total_mean_m,targetDeposition_pct,16,-0.101278946853602,-0.43491124260355
+16 runs,loc_rmse_m,targetDeposition_pct,16,-0.0273857865249461,-0.11993529890294
+16 runs,landing_mean_m,targetDeposition_pct,16,-0.86916570808886,-0.967455621301775
+per target (pooled),landing_m,doseFraction,720,-0.838497353706783,-0.94698762411217
+per target (pooled),release_total_m,doseFraction,720,-0.102597422656867,-0.263600328749517

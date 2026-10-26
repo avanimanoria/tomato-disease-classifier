@@ -1,0 +1,12 @@
+check,pass,detail
+"P_capture within [0, 1]",1,""
+"increasing R never reduces capture (exact under common random numbers)",1,""
+"R > 0, b = 0, both sigmas 0 => P_capture = 1",1,""
+"b = 0: swapping sigma_loc and sigma_spray leaves P_capture unchanged (MC tolerance)",1,"max diff 0.0015, tol 0.0045"
+"equal sigmas, b = 0: equal intervention values (MC tolerance)",1,"max diff 0.0006"
+"Monte Carlo vs analytical Rayleigh / Rice capture, all 576 cells (tol 4 SE)",1,"max |MC - analytic| 0.0017, tol 0.0045"
+"zero-bias cells vs analytical Rayleigh baseline",1,"max 0.0015"
+"common random numbers: identical draws regenerated from the stored seed",1,""
+"exact reproducibility of a cell from the stored seed",1,"0.341890"
+"no existing source / results modified (git status: only this runner and its folder)",1,""
+"frozen checksums unchanged (FrozenExperimentIntegrityTest)",1,""

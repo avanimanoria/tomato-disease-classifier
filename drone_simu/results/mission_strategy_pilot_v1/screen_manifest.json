@@ -1,0 +1,51 @@
+{
+  "experiment": "mission_strategy_pilot_v1",
+  "phase": "screen",
+  "engine": "existing mission engine; onePass and blanket assembled from engine functions in this runner",
+  "prevalence": [
+    0.05,
+    0.2,
+    0.5,
+    0.8
+  ],
+  "detectors": [
+    {
+      "level": "HIGH",
+      "sens": 0.95,
+      "fpr": 0.03
+    },
+    {
+      "level": "MEDIUM",
+      "sens": 0.8,
+      "fpr": 0.1
+    },
+    {
+      "level": "LOW",
+      "sens": 0.6,
+      "fpr": 0.2
+    }
+  ],
+  "structures": [
+    "dispersed",
+    "clustered"
+  ],
+  "scales": [
+    "small"
+  ],
+  "seeds": [
+    11,
+    12,
+    13
+  ],
+  "evaluations": 288,
+  "paretoTolerances": {
+    "success_pp": 1,
+    "chem_rel": 0.01,
+    "time_rel": 0.01
+  },
+  "created": "2026-10-12 00:16:34",
+  "matlab": "26.2.0.3386108 (R2026b)",
+  "commit": "aeac063",
+  "sanityAllPass": true,
+  "runtime_s": 678.6597044
+}

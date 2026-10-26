@@ -1,0 +1,12 @@
+check,pass,detail
+scenario pairing: wind=0 runs share one scenario hash,1,73489343c29d
+scenario pairing: wind=1 runs share one scenario hash,1,69a0b6616d6d
+identical field / plants / disease truth / detection draws in all 16 runs,1,
+oracle localization error is zero (ORACLE),1,max 0 m
+no-wind sanity: wind compensation offset is zero when wind = 0,1,max 0 m
+actuator timing error is zero (valve delay 0),1,
+sensorFusion runs geolocate targets from the estimate (geolocation error > 0),1,
+oracle runs: targets at true plant positions (geolocation error 0),1,
+test suite TruthFirewallTest,1,8/8 passed
+test suite MassEnergySprayConservationTest,1,3/3 passed
+test suite FrozenExperimentIntegrityTest,1,1/1 passed

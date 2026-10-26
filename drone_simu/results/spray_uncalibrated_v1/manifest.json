@@ -1,0 +1,13 @@
+{
+  "study": "spray_uncalibrated_v1",
+  "calibration": "UNCALIBRATED (no deposition data supplied)",
+  "created": "2026-10-11 19:30:00",
+  "matlab": "26.2.0.3386108 (R2026b)",
+  "commit": "fbda452",
+  "fieldSeed": 42,
+  "preset": "Fully Corrected",
+  "missionsPartA": 60,
+  "missionsPartB": 18,
+  "kernelCasesPartB3": 27,
+  "runtime_s": 63.7275395
+}
